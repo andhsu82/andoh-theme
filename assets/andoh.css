@@ -737,7 +737,7 @@ svg.andoh-draw {
   border-color: currentColor;
 }
 
-/* Header that hides at the top edge and slides in on hover (desktop with a mouse) */
+/* Header shows at the top of the page, hides while scrolling, slides back in near the top edge (desktop with a mouse) */
 @media (hover: hover) and (min-width: 990px) {
   html.andoh-header-reveal .section-header {
     position: fixed !important;
@@ -751,14 +751,5 @@ svg.andoh-draw {
 
   html.andoh-header-reveal.andoh-header-shown .section-header {
     transform: none;
-  }
-
-  html.andoh-header-reveal .andoh-header-hint {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2.4rem;
-    z-index: 3;
   }
 }

@@ -1529,7 +1529,7 @@
       {
         "type": "checkbox",
         "id": "andoh_header_reveal",
-        "label": "Hide the header until the mouse reaches the top",
+        "label": "Hide the header while scrolling, show it near the top",
         "default": true,
         "info": "On computers only. Phones and tablets always show the header."
       },

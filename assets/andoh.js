@@ -52,29 +52,49 @@
     initHeaderReveal();
   }
 
-  // Header that slides in when the mouse reaches the top of the window
+  // Header that shows at the top of the page, hides once you scroll, and slides back in
+  // whenever the mouse moves near the top of the window.
   function initHeaderReveal() {
     if (!root.classList.contains('andoh-header-reveal')) return;
     var header = document.querySelector('.section-header');
-    var hint = document.querySelector('.andoh-header-hint');
     if (!header) return;
-    function show() {
-      root.classList.add('andoh-header-shown');
+    var nearTop = false;
+    var overHeader = false;
+
+    function busy() {
+      return header.contains(document.activeElement) || header.querySelector('details[open]');
     }
-    function hide() {
-      if (header.contains(document.activeElement) || header.querySelector('details[open]')) return;
-      root.classList.remove('andoh-header-shown');
+    function update() {
+      var show = window.scrollY < 40 || nearTop || overHeader || busy() || (window.Shopify && Shopify.designMode);
+      root.classList.toggle('andoh-header-shown', !!show);
     }
-    if (hint) hint.addEventListener('mouseenter', show);
-    header.addEventListener('mouseenter', show);
-    header.addEventListener('mouseleave', hide);
-    header.addEventListener('focusin', show);
+
+    document.addEventListener('mousemove', function (event) {
+      var limit = nearTop ? header.offsetHeight + 24 : 72;
+      nearTop = event.clientY < limit;
+      update();
+    });
+    document.documentElement.addEventListener('mouseleave', function () {
+      nearTop = false;
+      update();
+    });
+    header.addEventListener('mouseenter', function () {
+      overHeader = true;
+      update();
+    });
+    header.addEventListener('mouseleave', function () {
+      overHeader = false;
+      update();
+    });
+    header.addEventListener('focusin', update);
     header.addEventListener('focusout', function () {
-      setTimeout(hide, 0);
+      setTimeout(update, 0);
     });
-    document.addEventListener('click', function (event) {
-      if (!header.contains(event.target)) hide();
+    document.addEventListener('click', function () {
+      setTimeout(update, 0);
     });
+    window.addEventListener('scroll', update, { passive: true });
+    update();
   }
 
   if (document.readyState === 'loading') {
