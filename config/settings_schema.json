@@ -1480,7 +1480,7 @@
       {
         "type": "checkbox",
         "id": "andoh_use_fonts",
-        "label": "Use andoh font (Newsreader)",
+        "label": "Use andoh fonts (Cormorant)",
         "default": true
       },
       {

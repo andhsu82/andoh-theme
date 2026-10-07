@@ -5,7 +5,7 @@ The Shopify theme for andoh. It is built on Shopify's free [Dawn](https://github
 ## What the andoh layer adds
 
 - **Two switches in the header.** FLAT / BUILT shows every piece as flat parts or finished. TAIPEI / NEW YORK swaps the hand-drawn patterns and the live clock between the two cities. Each visitor's choice is remembered across pages.
-- **Brand settings** under *Theme settings > andoh*: accent color, the Newsreader font on or off, and each switch on or off.
+- **Brand settings** under *Theme settings > andoh*: accent color, the Cormorant fonts on or off, and each switch on or off.
 - **Homepage sections**: *andoh hero*, *andoh divider* (hand-drawn band), *andoh how it arrives*, *andoh lookbook image* (a photo with product tags), plus Dawn's featured collection and newsletter.
 - **Product page block**: *How it arrives* shows box size, parts, assembly time and tools.
 - **Product cards**: in FLAT mode the card shows the product's flat image and its parts and box size.
