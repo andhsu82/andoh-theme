@@ -1,0 +1,24 @@
+{% comment %}
+  One mono spec line under a product card: the material when BUILT, parts and box size when FLAT.
+  Accepts:
+  - product: {Object}
+{% endcomment %}
+{%- liquid
+  assign andoh_m = product.metafields.andoh
+  assign andoh_flat_spec = ''
+  if andoh_m.parts != blank
+    assign andoh_flat_spec = andoh_m.parts.value | append: ' parts'
+  endif
+  if andoh_m.box_size != blank
+    if andoh_flat_spec != ''
+      assign andoh_flat_spec = andoh_flat_spec | append: ' · '
+    endif
+    assign andoh_flat_spec = andoh_flat_spec | append: 'box ' | append: andoh_m.box_size.value
+  endif
+-%}
+{%- if andoh_m.material != blank -%}
+  <div class="andoh-card-spec andoh-built">{{ andoh_m.material.value | escape }}</div>
+{%- endif -%}
+{%- if andoh_flat_spec != '' -%}
+  <div class="andoh-card-spec andoh-flat">{{ andoh_flat_spec | escape }}</div>
+{%- endif -%}

@@ -1,0 +1,21 @@
+{% comment %}
+  Renders the FLAT / BUILT and TAIPEI / NEW YORK switches.
+  Accepts:
+  - class: {String} extra class for the wrapper (optional)
+{% endcomment %}
+{%- if settings.andoh_show_mode_switch or settings.andoh_show_city_switch -%}
+  <div class="andoh-switches {{ class }}">
+    {%- if settings.andoh_show_mode_switch -%}
+      <div class="andoh-switch" role="group" aria-label="Show pieces flat or built">
+        <button type="button" data-andoh-set="mode" data-andoh-value="flat" aria-pressed="false">FLAT</button>
+        <button type="button" data-andoh-set="mode" data-andoh-value="built" aria-pressed="true">BUILT</button>
+      </div>
+    {%- endif -%}
+    {%- if settings.andoh_show_city_switch -%}
+      <div class="andoh-switch" role="group" aria-label="City">
+        <button type="button" data-andoh-set="city" data-andoh-value="taipei" aria-pressed="true">TAIPEI</button>
+        <button type="button" data-andoh-set="city" data-andoh-value="ny" aria-pressed="false">NEW YORK</button>
+      </div>
+    {%- endif -%}
+  </div>
+{%- endif -%}

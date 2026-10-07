@@ -1,0 +1,36 @@
+{% comment %}
+  Placeholder line drawings of the revelo side table, used until real photos or Anderson's drawings are uploaded.
+  Accepts:
+  - view: {String} 'built', 'flat' or 'exploded'
+{% endcomment %}
+{%- case view -%}
+  {%- when 'flat' -%}
+    <svg class="andoh-draw" viewBox="0 0 420 300" filter="url(#andoh-wobble)" role="img" aria-label="The side table as flat parts">
+      <path class="s" d="M40 40 H380 V58 H40 Z"/><text x="44" y="32">A · top</text>
+      <path class="s" d="M40 100 H210 V230 H40 Z M40 230 V170 A21 21 0 0 1 82 170 V230 M82 230 V170 A21 21 0 0 1 124 170 V230 M124 230 V170 A21 21 0 0 1 166 170 V230 M166 230 V170 A21 21 0 0 1 208 170 V230"/>
+      <path class="a" d="M125 100 V138"/>
+      <path class="s" d="M230 100 H400 V230 H230 Z M230 230 V170 A21 21 0 0 1 272 170 V230 M272 230 V170 A21 21 0 0 1 314 170 V230 M314 230 V170 A21 21 0 0 1 356 170 V230 M356 230 V170 A21 21 0 0 1 398 170 V230"/>
+      <path class="a" d="M315 230 V192"/>
+      <text x="44" y="92">B · arch panel</text><text x="234" y="92">C · arch panel</text>
+      <text x="150" y="262">slots cross here, no tools</text>
+    </svg>
+  {%- when 'exploded' -%}
+    <svg class="andoh-draw" viewBox="0 0 420 280" filter="url(#andoh-wobble)" role="img" aria-label="Exploded drawing of the side table">
+      <path class="s" d="M100 30 H320 V44 H100 Z"/>
+      <path class="t" d="M210 50 V86"/>
+      <path class="s" d="M70 110 L210 92 L210 200 L70 218 Z"/>
+      <path class="s" d="M350 110 L210 92 L210 200 L350 218 Z"/>
+      <path class="a" d="M210 92 V130"/>
+      <path class="t" d="M120 230 Q210 262 300 230"/>
+      <text x="236" y="76">drop the top on</text>
+      <text x="20" y="250">slide B into C</text>
+    </svg>
+  {%- else -%}
+    <svg class="andoh-draw" viewBox="0 0 420 300" filter="url(#andoh-wobble)" role="img" aria-label="The side table, built">
+      <path class="s" d="M90 70 H330 V86 H90 Z"/>
+      <path class="s" d="M104 86 V250 M316 86 V250 M104 250 H316"/>
+      <path class="s" d="M104 250 V150 A26 26 0 0 1 156 150 V250 M156 250 V150 A26 26 0 0 1 208 150 V250 M208 250 V150 A26 26 0 0 1 260 150 V250 M260 250 V150 A26 26 0 0 1 312 150 V250"/>
+      <path class="a" d="M352 120 q-14 30 -40 40"/><path class="a" d="M312 160 l10 -2 M312 160 l4 -9"/>
+      <text x="330" y="112">four arches,</text><text x="330" y="134">one rhythm</text>
+    </svg>
+{%- endcase -%}

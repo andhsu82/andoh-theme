@@ -1,0 +1,28 @@
+{% comment %}
+  "How it arrives" facts for a product, read from its andoh metafields.
+  Renders nothing when none of the facts are filled in.
+  Accepts:
+  - product: {Object}
+  - heading: {String} optional heading
+{% endcomment %}
+{%- liquid
+  assign m = product.metafields.andoh
+  assign has_facts = false
+  if m.box_size != blank or m.parts != blank or m.assembly_time != blank or m.tools != blank or m.arrives_note != blank
+    assign has_facts = true
+  endif
+-%}
+{%- if has_facts -%}
+  <div class="andoh-arrives-block">
+    <span class="andoh-label">{{ heading | default: 'How it arrives' }}</span>
+    <div class="andoh-facts">
+      {%- if m.box_size != blank -%}<div><b>{{ m.box_size.value }}</b><span class="andoh-label">box</span></div>{%- endif -%}
+      {%- if m.parts != blank -%}<div><b>{{ m.parts.value }}</b><span class="andoh-label">parts</span></div>{%- endif -%}
+      {%- if m.assembly_time != blank -%}<div><b>{{ m.assembly_time.value }}</b><span class="andoh-label">to assemble</span></div>{%- endif -%}
+      {%- if m.tools != blank -%}<div><b>{{ m.tools.value }}</b><span class="andoh-label">tools</span></div>{%- endif -%}
+    </div>
+    {%- if m.arrives_note != blank -%}
+      <p>{{ m.arrives_note.value | newline_to_br }}</p>
+    {%- endif -%}
+  </div>
+{%- endif -%}

@@ -1,0 +1,81 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding">
+    <div class="andoh-hero">
+      <div>
+        {%- if section.settings.eyebrow != blank -%}
+          <div class="andoh-label">{{ section.settings.eyebrow | escape }}</div>
+        {%- endif -%}
+        <h1>{{ section.settings.heading | escape }}</h1>
+        {%- if section.settings.text != blank -%}
+          <div class="andoh-hero__text rte">{{ section.settings.text }}</div>
+        {%- endif -%}
+        {%- if section.settings.button_label != blank -%}
+          <a class="andoh-link" href="{{ section.settings.button_link | default: routes.all_products_collection_url }}">
+            {{- section.settings.button_label | escape -}}
+          </a>
+        {%- endif -%}
+      </div>
+
+      <div class="andoh-frame">
+        <svg class="andoh-frame__bg" aria-hidden="true" focusable="false">
+          <rect class="andoh-tp" width="100%" height="100%" fill="url(#andoh-pattern-taipei)"/>
+          <rect class="andoh-ny" width="100%" height="100%" fill="url(#andoh-pattern-ny)"/>
+        </svg>
+
+        <div class="andoh-built">
+          {%- if section.settings.image_built != blank -%}
+            {{ section.settings.image_built | image_url: width: 1800 | image_tag: loading: 'eager', sizes: '(min-width: 750px) 58vw, 100vw', widths: '600, 900, 1200, 1800' }}
+          {%- else -%}
+            <div class="andoh-frame__art">{% render 'andoh-drawing', view: 'built' %}</div>
+          {%- endif -%}
+        </div>
+        <div class="andoh-flat">
+          {%- if section.settings.image_flat != blank -%}
+            {{ section.settings.image_flat | image_url: width: 1800 | image_tag: loading: 'lazy', sizes: '(min-width: 750px) 58vw, 100vw', widths: '600, 900, 1200, 1800' }}
+          {%- else -%}
+            <div class="andoh-frame__art">{% render 'andoh-drawing', view: 'flat' %}</div>
+          {%- endif -%}
+        </div>
+
+        {%- if section.settings.show_clock -%}
+          <span class="andoh-clock" data-andoh-clock></span>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "andoh hero",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Small label", "default": "Collection 01 · Objects for slow rooms" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Furniture that arrives flat and lives fully." },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Pieces designed in New York and rooted in Taipei. Each one slots together by hand, ships in a slim box and keeps its footprint light.</p>" },
+    { "type": "text", "id": "button_label", "label": "Link label", "default": "Shop the objects" },
+    { "type": "url", "id": "button_link", "label": "Link" },
+    { "type": "image_picker", "id": "image_built", "label": "Image when BUILT", "info": "The finished piece. Leave empty to show the line drawing." },
+    { "type": "image_picker", "id": "image_flat", "label": "Image when FLAT", "info": "The same piece as flat parts or in its box. Leave empty to show the line drawing." },
+    { "type": "checkbox", "id": "show_clock", "label": "Show the live Taipei / New York clock", "default": true },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Top padding", "default": 52 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Bottom padding", "default": 52 }
+  ],
+  "presets": [{ "name": "andoh hero" }]
+}
+{% endschema %}

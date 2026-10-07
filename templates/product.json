@@ -3,13 +3,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
         "title": {
           "type": "title"
         },
@@ -41,16 +34,22 @@
           "settings": {
             "share_label": "Share"
           }
+        },
+        "andoh_arrives": {
+          "type": "andoh_arrives",
+          "settings": {
+            "heading": "How it arrives"
+          }
         }
       },
       "block_order": [
-        "vendor",
         "title",
         "price",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
         "description",
+        "andoh_arrives",
         "share"
       ],
       "settings": {

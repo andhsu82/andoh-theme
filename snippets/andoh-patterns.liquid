@@ -1,0 +1,31 @@
+{% comment %}
+  Hidden SVG definitions shared by the whole page: the hand-drawn wobble filter and the two city patterns.
+  Taipei: iron window flowers (鐵窗花). New York: fire escapes.
+  These are stand-ins; uploading Anderson's own drawings in the divider section replaces them.
+{% endcomment %}
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="andoh-wobble">
+      <feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="2" seed="4"/>
+      <feDisplacementMap in="SourceGraphic" scale="2.4"/>
+    </filter>
+    <pattern id="andoh-pattern-taipei" width="64" height="64" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round">
+        <rect x="2" y="2" width="60" height="60"/>
+        <circle cx="32" cy="32" r="13"/>
+        <path d="M32 2 L32 19 M32 45 L32 62 M2 32 L19 32 M45 32 L62 32"/>
+        <path d="M2 2 Q18 18 22.8 22.8 M62 2 Q46 18 41.2 22.8 M2 62 Q18 46 22.8 41.2 M62 62 Q46 46 41.2 41.2"/>
+        <circle cx="32" cy="27" r="3"/><circle cx="36.8" cy="30.5" r="3"/><circle cx="35" cy="36" r="3"/><circle cx="29" cy="36" r="3"/><circle cx="27.2" cy="30.5" r="3"/>
+      </g>
+    </pattern>
+    <pattern id="andoh-pattern-ny" width="90" height="64" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round">
+        <path d="M0 10 H90 M0 54 H90"/>
+        <path d="M0 10 V1 M10 10 V1 M20 10 V1 M30 10 V1 M40 10 V1 M50 10 V1 M60 10 V1 M70 10 V1 M80 10 V1"/>
+        <path d="M0 54 V45 M10 54 V45 M20 54 V45 M30 54 V45 M40 54 V45 M50 54 V45 M60 54 V45 M70 54 V45 M80 54 V45"/>
+        <path d="M18 10 L58 54 M22 10 L62 54"/>
+        <path d="M24 17 l4 0 M30 24 l4 0 M36 30 l4 0 M42 37 l4 0 M48 43 l4 0"/>
+      </g>
+    </pattern>
+  </defs>
+</svg>

@@ -90,6 +90,10 @@
               {%- case block.type -%}
                 {%- when '@app' -%}
                   {% render block %}
+                {%- when 'andoh_arrives' -%}
+                  <div {{ block.shopify_attributes }}>
+                    {% render 'andoh-how-it-arrives', product: product, heading: block.settings.heading %}
+                  </div>
                 {%- when 'text' -%}
                   <p
                     class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
@@ -761,6 +765,23 @@
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type": "andoh_arrives",
+      "name": "How it arrives",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Shows the box size, parts, assembly time, tools and note from the product's andoh metafields."
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "How it arrives"
+        }
+      ]
     },
     {
       "type": "text",

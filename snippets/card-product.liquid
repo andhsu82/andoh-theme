@@ -105,6 +105,18 @@
                     height="{{ card_product.media[1].height }}"
                   >
                 {%- endif -%}
+                {%- if card_product.metafields.andoh.flat_image != blank -%}
+                  {{
+                    card_product.metafields.andoh.flat_image
+                    | image_url: width: 1066
+                    | image_tag:
+                      class: 'andoh-flat andoh-flat-media',
+                      loading: 'lazy',
+                      sizes: '(min-width: 990px) 25vw, (min-width: 750px) 33vw, 50vw',
+                      widths: '360, 533, 720, 1066',
+                      alt: ''
+                  }}
+                {%- endif -%}
               </div>
             </div>
           {%- endif -%}
@@ -207,6 +219,7 @@
               {%- endif -%}
 
               {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
+              {% render 'andoh-card-spec', product: card_product %}
               {%- if card_product.quantity_price_breaks_configured? -%}
                 {% if card_product.variants_count == 1 and quick_add == 'bulk' %}
                   {% liquid

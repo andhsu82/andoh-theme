@@ -279,6 +279,30 @@
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
+    {{ 'andoh.css' | asset_url | stylesheet_tag }}
+    {%- if settings.andoh_use_fonts -%}
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Reenie+Beanie&display=swap">
+    {%- endif -%}
+    <style>
+      :root { --andoh-accent: {{ settings.andoh_accent | default: '#D9381E' }}; }
+    </style>
+    <script>
+      (function () {
+        var root = document.documentElement;
+        {%- if settings.andoh_use_fonts %}
+        root.classList.add('andoh-fonts');
+        {%- endif %}
+        try {
+          var mode = localStorage.getItem('andoh-mode');
+          var city = localStorage.getItem('andoh-city');
+          if (mode === 'flat' || mode === 'built') root.setAttribute('data-andoh-mode', mode);
+          if (city === 'taipei' || city === 'ny') root.setAttribute('data-andoh-city', city);
+        } catch (e) {}
+      })();
+    </script>
+    <script src="{{ 'andoh.js' | asset_url }}" defer="defer"></script>
     <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 
     {%- if settings.cart_type == 'drawer' -%}
@@ -322,6 +346,7 @@
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
+    {% render 'andoh-patterns' %}
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>

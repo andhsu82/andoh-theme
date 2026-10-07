@@ -1,11 +1,46 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Dawn",
+    "theme_name": "andoh",
     "theme_version": "16.0.0",
-    "theme_author": "Shopify",
+    "theme_author": "andoh, based on Shopify Dawn",
     "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
     "theme_support_url": "https://support.shopify.com/"
+  },
+  {
+    "name": "andoh",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Brand settings for the andoh theme."
+      },
+      {
+        "type": "color",
+        "id": "andoh_accent",
+        "label": "Accent color",
+        "info": "Used sparingly: cart count, tags, hover lines. Try #D9381E (temple vermilion) or #FF5A1F (signal orange).",
+        "default": "#D9381E"
+      },
+      {
+        "type": "checkbox",
+        "id": "andoh_use_fonts",
+        "label": "Use andoh fonts",
+        "info": "Hanken Grotesk, IBM Plex Mono and Reenie Beanie from Google Fonts. Turn off to use the Typography fonts below.",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "andoh_show_mode_switch",
+        "label": "Show the FLAT / BUILT switch",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "andoh_show_city_switch",
+        "label": "Show the TAIPEI / NEW YORK switch",
+        "default": true
+      }
+    ]
   },
   {
     "name": "t:settings_schema.logo.name",
