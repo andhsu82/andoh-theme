@@ -1,33 +1,55 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "andoh-hero",
       "settings": {
+        "eyebrow": "Collection 01 · Objects for slow rooms",
+        "heading": "Furniture that arrives flat and lives fully.",
+        "text": "<p>Pieces designed in New York and rooted in Taipei. Each one slots together by hand, ships in a slim box and keeps its footprint light.</p>",
+        "button_label": "Shop the objects",
+        "button_link": "",
         "live_ny": "https://www.youtube.com/watch?v=VXo0VqVcbK4",
-        "live_ny_label": "Times Square, New York"
+        "live_ny_label": "Times Square, New York",
+        "live_taipei": "https://www.youtube.com/watch?v=34h_Cy_n0Ok",
+        "live_taipei_label": "Taipei",
+        "show_clock": true,
+        "color_scheme": "scheme-1",
+        "padding_top": 52,
+        "padding_bottom": 52
       }
     },
     "divider_1": {
       "type": "andoh-divider",
-      "settings": {}
+      "settings": {
+        "height": 44,
+        "color_scheme": ""
+      }
     },
     "objects": {
       "type": "featured-collection",
       "settings": {
+        "collection": "all",
+        "products_to_show": 6,
         "title": "Objects",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "all",
-        "products_to_show": 6,
         "columns_desktop": 3,
-        "color_scheme": "scheme-1",
+        "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
+        "color_scheme": "scheme-1",
         "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": false,
@@ -35,27 +57,48 @@
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
+        "swipe_on_mobile": false,
         "padding_top": 52,
         "padding_bottom": 52
       }
     },
     "divider_2": {
       "type": "andoh-divider",
-      "settings": {}
+      "settings": {
+        "height": 44,
+        "color_scheme": ""
+      }
     },
     "arrives": {
       "type": "andoh-arrives",
-      "settings": {}
+      "settings": {
+        "product": "",
+        "eyebrow": "How it arrives",
+        "heading": "Two panels, one slot, no screws.",
+        "text": "<p>Every piece is drawn to pack flat. That means a smaller box, less air shipped across oceans, and a piece you can take with you when you move.</p>",
+        "color_scheme": "",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
     },
     "lookbook": {
       "type": "andoh-lookbook",
       "settings": {
-        "link": "/pages/lookbook"
+        "heading": "In other people's rooms",
+        "credit": "Space: Name Surname · Photo: Name Surname",
+        "link_label": "See all spaces",
+        "link": "/pages/lookbook",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "divider_3": {
       "type": "andoh-divider",
-      "settings": {}
+      "settings": {
+        "height": 44,
+        "color_scheme": ""
+      }
     },
     "letters": {
       "type": "newsletter",
@@ -74,7 +117,8 @@
           }
         },
         "email_form": {
-          "type": "email_form"
+          "type": "email_form",
+          "settings": {}
         }
       },
       "block_order": [
