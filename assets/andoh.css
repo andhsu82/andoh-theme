@@ -33,13 +33,20 @@ html.andoh-fonts .h0,
 html.andoh-fonts .h1,
 html.andoh-fonts .h2,
 html.andoh-fonts .h3 {
-  letter-spacing: -0.015em;
+  letter-spacing: -0.01em;
   line-height: 1.05;
+  margin-top: 0;
+  margin-bottom: 0.4em;
+}
+
+html.andoh-fonts .rte p {
+  margin: 0 0 0.8em;
 }
 
 html.andoh-fonts body {
   font-size: 1.7rem;
-  letter-spacing: 0.01em;
+  letter-spacing: 0;
+  line-height: 1.45;
 }
 
 @media screen and (min-width: 750px) {
@@ -58,7 +65,7 @@ html.andoh-fonts .andoh-arrives__text {
 .andoh-label {
   font-family: var(--andoh-mono);
   font-size: 1.1rem;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--andoh-muted);
 }
@@ -73,7 +80,7 @@ html.andoh-fonts .andoh-arrives__text {
   display: inline-block;
   font-family: var(--andoh-mono);
   font-size: 1.2rem;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   text-decoration: none;
   color: rgb(var(--color-foreground));
@@ -117,7 +124,7 @@ html.andoh-fonts .andoh-arrives__text {
   padding: 2px;
   font-family: var(--andoh-mono);
   font-size: 1.1rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
 }
 
 .andoh-switch button {
@@ -213,7 +220,7 @@ svg.andoh-draw {
 .andoh-draw text.m {
   font-family: var(--andoh-mono);
   font-size: 10px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
   fill: rgba(var(--color-foreground), 0.6);
 }
 
@@ -250,7 +257,7 @@ svg.andoh-draw {
   font-size: clamp(4.8rem, 7vw, 8.8rem);
   line-height: 0.98;
   letter-spacing: -0.02em;
-  margin: 1.4rem 0 1.8rem;
+  margin: 0.8rem 0 1.2rem;
   text-wrap: balance;
 }
 
@@ -302,7 +309,7 @@ svg.andoh-draw {
   bottom: 1rem;
   font-family: var(--andoh-mono);
   font-size: 1.1rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
   color: rgba(var(--color-foreground), 0.6);
   background: rgb(var(--color-background));
   padding: 0.2rem 0.6rem;
@@ -358,7 +365,7 @@ svg.andoh-draw {
   gap: 0.6rem;
   font-family: var(--andoh-mono);
   font-size: 1.1rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: rgb(var(--color-foreground));
   background: rgb(var(--color-background));
