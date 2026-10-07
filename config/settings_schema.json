@@ -1480,7 +1480,7 @@
       {
         "type": "checkbox",
         "id": "andoh_use_fonts",
-        "label": "Use andoh fonts",
+        "label": "Use andoh font (Archivo)",
         "default": true
       },
       {
