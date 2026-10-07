@@ -20,8 +20,8 @@ html.andoh-fonts {
   --font-body-family: var(--andoh-text);
   --font-heading-family: var(--andoh-display);
   /* Strong contrast: big, heavy titles over light, quiet paragraphs */
-  --font-heading-weight: 600;
-  --font-heading-scale: 1.4;
+  --font-heading-weight: var(--andoh-title-weight, 600);
+  --font-heading-scale: var(--andoh-title-scale, 1.4);
   --font-body-weight: 400;
 }
 
@@ -33,32 +33,32 @@ html.andoh-fonts .h0,
 html.andoh-fonts .h1,
 html.andoh-fonts .h2,
 html.andoh-fonts .h3 {
-  letter-spacing: -0.01em;
-  line-height: 1.05;
+  letter-spacing: var(--andoh-title-tracking, -0.01em);
+  line-height: var(--andoh-title-line, 1.05);
   margin-top: 0;
-  margin-bottom: 0.4em;
+  margin-bottom: var(--andoh-title-gap, 0.4em);
 }
 
 html.andoh-fonts .rte p {
-  margin: 0 0 0.8em;
+  margin: 0 0 var(--andoh-para-gap, 0.8em);
 }
 
 html.andoh-fonts body {
-  font-size: 1.7rem;
+  font-size: calc(var(--andoh-body-size, 18px) - 1px);
   letter-spacing: 0;
-  line-height: 1.45;
+  line-height: var(--andoh-body-line, 1.45);
 }
 
 @media screen and (min-width: 750px) {
   html.andoh-fonts body {
-    font-size: 1.8rem;
+    font-size: var(--andoh-body-size, 18px);
   }
 }
 
 html.andoh-fonts .rte p,
 html.andoh-fonts .andoh-hero__text,
 html.andoh-fonts .andoh-arrives__text {
-  color: rgba(var(--color-foreground), 0.72);
+  color: rgba(var(--color-foreground), var(--andoh-text-strength, 0.72));
 }
 
 /* Small shared pieces */
@@ -246,16 +246,16 @@ svg.andoh-draw {
 /* Hero */
 .andoh-hero {
   display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  grid-template-columns: minmax(0, var(--andoh-hero-split, 40%)) minmax(0, 1fr);
   gap: clamp(2.4rem, 5vw, 6.4rem);
   align-items: end;
 }
 
 .andoh-hero h1 {
   font-family: var(--font-heading-family);
-  font-weight: 600;
-  font-size: clamp(4.8rem, 7vw, 8.8rem);
-  line-height: 0.98;
+  font-weight: var(--andoh-title-weight, 600);
+  font-size: clamp(min(4.8rem, var(--andoh-hero-size, 88px)), 7vw, var(--andoh-hero-size, 88px));
+  line-height: calc(var(--andoh-title-line, 1.05) - 0.07);
   letter-spacing: -0.02em;
   margin: 0.8rem 0 1.2rem;
   text-wrap: balance;

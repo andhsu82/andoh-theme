@@ -1496,5 +1496,146 @@
         "default": true
       }
     ]
+  },
+  {
+    "name": "andoh layout & type",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Drag a slider and the preview updates. Page width and space between sections are under Layout."
+      },
+      {
+        "type": "header",
+        "content": "Titles"
+      },
+      {
+        "type": "range",
+        "id": "andoh_title_scale",
+        "label": "Title size",
+        "min": 100,
+        "max": 200,
+        "step": 5,
+        "default": 140,
+        "unit": "%"
+      },
+      {
+        "type": "select",
+        "id": "andoh_title_weight",
+        "label": "Title weight",
+        "default": "600",
+        "options": [
+          {
+            "value": "500",
+            "label": "Medium"
+          },
+          {
+            "value": "600",
+            "label": "Semi-bold"
+          },
+          {
+            "value": "700",
+            "label": "Bold"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "andoh_title_line",
+        "label": "Title line height",
+        "min": 90,
+        "max": 130,
+        "step": 5,
+        "default": 105,
+        "unit": "%"
+      },
+      {
+        "type": "range",
+        "id": "andoh_title_tracking",
+        "label": "Title letter spacing",
+        "min": -4,
+        "max": 4,
+        "step": 1,
+        "default": -1,
+        "info": "Below 0 pulls letters closer, above 0 spreads them."
+      },
+      {
+        "type": "range",
+        "id": "andoh_title_gap",
+        "label": "Space under titles",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "default": 4
+      },
+      {
+        "type": "range",
+        "id": "andoh_hero_size",
+        "label": "Homepage hero title size",
+        "min": 48,
+        "max": 140,
+        "step": 4,
+        "default": 88,
+        "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": "Text"
+      },
+      {
+        "type": "range",
+        "id": "andoh_body_size",
+        "label": "Text size",
+        "min": 14,
+        "max": 22,
+        "step": 1,
+        "default": 18,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "andoh_body_line",
+        "label": "Text line height",
+        "min": 110,
+        "max": 180,
+        "step": 5,
+        "default": 145,
+        "unit": "%"
+      },
+      {
+        "type": "range",
+        "id": "andoh_para_gap",
+        "label": "Space between paragraphs",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "andoh_text_strength",
+        "label": "Text darkness",
+        "min": 40,
+        "max": 100,
+        "step": 2,
+        "default": 72,
+        "unit": "%",
+        "info": "Lower makes paragraphs lighter, so titles stand out more."
+      },
+      {
+        "type": "header",
+        "content": "Homepage hero"
+      },
+      {
+        "type": "range",
+        "id": "andoh_hero_split",
+        "label": "Text column width",
+        "min": 30,
+        "max": 60,
+        "step": 5,
+        "default": 40,
+        "unit": "%",
+        "info": "The image takes the rest."
+      }
+    ]
   }
 ]

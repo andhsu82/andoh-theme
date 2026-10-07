@@ -287,6 +287,19 @@
     {%- endunless -%}
     <style>
       :root { --andoh-accent: {{ settings.andoh_accent | default: '#D9381E' }}; }
+      :root {
+        --andoh-title-scale: {{ settings.andoh_title_scale | default: 140 | divided_by: 100.0 }};
+        --andoh-title-weight: {{ settings.andoh_title_weight | default: '600' }};
+        --andoh-title-line: {{ settings.andoh_title_line | default: 105 | divided_by: 100.0 }};
+        --andoh-title-tracking: {{ settings.andoh_title_tracking | default: -1 | divided_by: 100.0 }}em;
+        --andoh-title-gap: {{ settings.andoh_title_gap | default: 4 | divided_by: 10.0 }}em;
+        --andoh-hero-size: {{ settings.andoh_hero_size | default: 88 }}px;
+        --andoh-body-size: {{ settings.andoh_body_size | default: 18 }}px;
+        --andoh-body-line: {{ settings.andoh_body_line | default: 145 | divided_by: 100.0 }};
+        --andoh-para-gap: {{ settings.andoh_para_gap | default: 8 | divided_by: 10.0 }}em;
+        --andoh-text-strength: {{ settings.andoh_text_strength | default: 72 | divided_by: 100.0 }};
+        --andoh-hero-split: {{ settings.andoh_hero_split | default: 40 }}%;
+      }
     </style>
     <script>
       (function () {
