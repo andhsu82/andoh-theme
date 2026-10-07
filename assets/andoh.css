@@ -580,3 +580,49 @@ svg.andoh-draw {
     transition: none;
   }
 }
+
+/* Feature: one large image, then name, a few lines and a shop link */
+.andoh-feature__label {
+  margin-bottom: 1.2rem;
+}
+
+.andoh-feature__media {
+  position: relative;
+  overflow: hidden;
+  background: var(--andoh-tile);
+  aspect-ratio: 16 / 9;
+}
+
+.andoh-feature__media--landscape {
+  aspect-ratio: 3 / 2;
+}
+
+.andoh-feature__media--tall {
+  aspect-ratio: 4 / 5;
+  max-width: 64rem;
+}
+
+.andoh-feature__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.andoh-feature__media .andoh-frame__art {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.andoh-feature__body {
+  max-width: 64rem;
+  margin-top: 2rem;
+}
+
+.andoh-feature__text {
+  color: rgba(var(--color-foreground), var(--andoh-text-strength, 0.72));
+}
