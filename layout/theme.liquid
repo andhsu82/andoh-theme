@@ -300,6 +300,16 @@
         --andoh-text-strength: {{ settings.andoh_text_strength | default: 72 | divided_by: 100.0 }};
         --andoh-hero-split: {{ settings.andoh_hero_split | default: 40 }}%;
       }
+      {%- unless settings.andoh_full_width == false %}
+      .page-width,
+      .header.page-width,
+      .footer__content-top.page-width,
+      .footer__content-bottom-wrapper.page-width {
+        max-width: none;
+        padding-left: {{ settings.andoh_gutter | default: 16 }}px;
+        padding-right: {{ settings.andoh_gutter | default: 16 }}px;
+      }
+      {%- endunless %}
     </style>
     <script>
       (function () {

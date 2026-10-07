@@ -1506,6 +1506,28 @@
       },
       {
         "type": "header",
+        "content": "Page"
+      },
+      {
+        "type": "checkbox",
+        "id": "andoh_full_width",
+        "label": "Full width, edge to edge",
+        "default": true,
+        "info": "Turns off the page width limit under Layout."
+      },
+      {
+        "type": "range",
+        "id": "andoh_gutter",
+        "label": "Side margin",
+        "min": 0,
+        "max": 80,
+        "step": 4,
+        "unit": "px",
+        "default": 16,
+        "info": "Space between the content and the screen edge. Set to 0 to touch the edge."
+      },
+      {
+        "type": "header",
         "content": "Titles"
       },
       {
