@@ -176,7 +176,8 @@
         "full_width": false,
         "padding_top": 64,
         "padding_bottom": 40
-      }
+      },
+      "disabled": true
     },
     "new": {
       "type": "andoh-feature",
@@ -307,11 +308,27 @@
         "padding_top": 36,
         "padding_bottom": 64
       }
+    },
+    "cover": {
+      "type": "andoh-cover",
+      "settings": {
+        "image": "",
+        "image_mobile": "",
+        "height": "full",
+        "position": "bottom-left",
+        "text_color": "light",
+        "overlay": 15,
+        "eyebrow": "",
+        "heading": "Objects for slow rooms",
+        "text": "<p>Furniture and homeware designed in New York and rooted in Taipei. Every piece is drawn to pack flat, slot together by hand and keep its footprint light.</p>",
+        "button_label": "Shop all objects",
+        "button_link": "shopify://collections/all"
+      }
     }
   },
   "order": [
+    "cover",
     "hero",
-    "intro",
     "new",
     "featured",
     "divider_1",
@@ -323,6 +340,7 @@
     "letters",
     "journal",
     "objects",
-    "divider_3"
+    "divider_3",
+    "intro"
   ]
 }

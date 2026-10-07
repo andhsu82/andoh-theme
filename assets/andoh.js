@@ -49,6 +49,32 @@
     apply('city', root.getAttribute('data-andoh-city') || 'taipei');
     tick();
     setInterval(tick, 30000);
+    initHeaderReveal();
+  }
+
+  // Header that slides in when the mouse reaches the top of the window
+  function initHeaderReveal() {
+    if (!root.classList.contains('andoh-header-reveal')) return;
+    var header = document.querySelector('.section-header');
+    var hint = document.querySelector('.andoh-header-hint');
+    if (!header) return;
+    function show() {
+      root.classList.add('andoh-header-shown');
+    }
+    function hide() {
+      if (header.contains(document.activeElement) || header.querySelector('details[open]')) return;
+      root.classList.remove('andoh-header-shown');
+    }
+    if (hint) hint.addEventListener('mouseenter', show);
+    header.addEventListener('mouseenter', show);
+    header.addEventListener('mouseleave', hide);
+    header.addEventListener('focusin', show);
+    header.addEventListener('focusout', function () {
+      setTimeout(hide, 0);
+    });
+    document.addEventListener('click', function (event) {
+      if (!header.contains(event.target)) hide();
+    });
   }
 
   if (document.readyState === 'loading') {

@@ -1527,6 +1527,13 @@
         "info": "Space between the content and the screen edge. Set to 0 to touch the edge."
       },
       {
+        "type": "checkbox",
+        "id": "andoh_header_reveal",
+        "label": "Hide the header until the mouse reaches the top",
+        "default": true,
+        "info": "On computers only. Phones and tablets always show the header."
+      },
+      {
         "type": "header",
         "content": "Titles"
       },

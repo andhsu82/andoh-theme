@@ -299,6 +299,7 @@
         --andoh-para-gap: {{ settings.andoh_para_gap | default: 8 | divided_by: 10.0 }}em;
         --andoh-text-strength: {{ settings.andoh_text_strength | default: 72 | divided_by: 100.0 }};
         --andoh-hero-split: {{ settings.andoh_hero_split | default: 40 }}%;
+        --andoh-gutter-px: {% if settings.andoh_full_width == false %}5rem{% else %}{{ settings.andoh_gutter | default: 16 }}px{% endif %};
       }
       {%- unless settings.andoh_full_width == false %}
       .page-width,
@@ -316,6 +317,9 @@
         var root = document.documentElement;
         {%- unless settings.andoh_use_fonts == false %}
         root.classList.add('andoh-fonts');
+        {%- endunless %}
+        {%- unless settings.andoh_header_reveal == false %}
+        root.classList.add('andoh-header-reveal');
         {%- endunless %}
         try {
           var mode = localStorage.getItem('andoh-mode');
@@ -370,6 +374,7 @@
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
     {% render 'andoh-patterns' %}
+    {%- unless settings.andoh_header_reveal == false -%}<div class="andoh-header-hint" aria-hidden="true"></div>{%- endunless -%}
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
