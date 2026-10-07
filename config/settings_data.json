@@ -2,7 +2,7 @@
   "current": "Dawn",
   "presets": {
     "Dawn": {
-      "logo_width": 90,
+      "logo_width": 110,
       "customer_account_menu": "customer-account-main-menu",
       "color_schemes": {
         "scheme-1": {
@@ -194,7 +194,8 @@
       "andoh_accent": "#D9381E",
       "andoh_use_fonts": true,
       "andoh_show_mode_switch": true,
-      "andoh_show_city_switch": true
+      "andoh_show_city_switch": true,
+      "logo": "shopify://shop_images/andoh_logo.webp"
     }
   }
 }
