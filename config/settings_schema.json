@@ -1480,7 +1480,7 @@
       {
         "type": "checkbox",
         "id": "andoh_use_fonts",
-        "label": "Use andoh font (Archivo)",
+        "label": "Use andoh font (Newsreader)",
         "default": true
       },
       {

@@ -9,19 +9,19 @@
   --andoh-line: #d9d7cf;
   --andoh-tile: #eceae3;
   --andoh-accent: #d9381e;
-  --andoh-sans: 'Archivo', 'Acumin Pro', 'Helvetica Neue', Arial, sans-serif;
-  --andoh-mono: var(--andoh-sans);
+  --andoh-text: 'Newsreader', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
+  --andoh-mono: var(--andoh-text);
   --andoh-hand: 'Reenie Beanie', 'Bradley Hand', 'Segoe Print', cursive;
   --andoh-seal: 'Noto Serif TC', 'Songti TC', serif;
 }
 
 html.andoh-fonts {
-  --font-body-family: var(--andoh-sans);
-  --font-heading-family: var(--andoh-sans);
+  --font-body-family: var(--andoh-text);
+  --font-heading-family: var(--andoh-text);
   --font-heading-weight: 400;
 }
 
-/* All text uses Archivo, a free stand-in for JW Anderson's Acumin. The handwriting face stays only inside the placeholder drawings. */
+/* All text uses Newsreader, a free serif. The handwriting face stays only inside the placeholder drawings. */
 
 /* Small shared pieces */
 .andoh-label {
