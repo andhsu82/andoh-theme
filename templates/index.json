@@ -2,7 +2,10 @@
   "sections": {
     "hero": {
       "type": "andoh-hero",
-      "settings": {}
+      "settings": {
+        "live_ny": "https://www.youtube.com/watch?v=VXo0VqVcbK4",
+        "live_ny_label": "Times Square, New York"
+      }
     },
     "divider_1": {
       "type": "andoh-divider",

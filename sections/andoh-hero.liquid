@@ -13,7 +13,13 @@
 
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <div class="page-width section-{{ section.id }}-padding">
-    <div class="andoh-hero">
+    {%- liquid
+      assign has_live = false
+      if section.settings.live_ny != blank or section.settings.live_taipei != blank
+        assign has_live = true
+      endif
+    -%}
+    <div class="andoh-hero{% if has_live %} andoh-hero--live{% endif %}">
       <div>
         {%- if section.settings.eyebrow != blank -%}
           <div class="andoh-label">{{ section.settings.eyebrow | escape }}</div>
@@ -54,6 +60,19 @@
           <span class="andoh-clock" data-andoh-clock></span>
         {%- endif -%}
       </div>
+
+      {%- if has_live -%}
+        <div class="andoh-hero__live">
+          {%- if section.settings.live_ny != blank and section.settings.live_taipei != blank -%}
+            {% render 'andoh-live', url: section.settings.live_ny, label: section.settings.live_ny_label, class: 'andoh-ny' %}
+            {% render 'andoh-live', url: section.settings.live_taipei, label: section.settings.live_taipei_label, class: 'andoh-tp' %}
+          {%- elsif section.settings.live_ny != blank -%}
+            {% render 'andoh-live', url: section.settings.live_ny, label: section.settings.live_ny_label %}
+          {%- else -%}
+            {% render 'andoh-live', url: section.settings.live_taipei, label: section.settings.live_taipei_label %}
+          {%- endif -%}
+        </div>
+      {%- endif -%}
     </div>
   </div>
 </div>
@@ -71,6 +90,13 @@
     { "type": "url", "id": "button_link", "label": "Link" },
     { "type": "image_picker", "id": "image_built", "label": "Image when BUILT", "info": "The finished piece. Leave empty to show the line drawing." },
     { "type": "image_picker", "id": "image_flat", "label": "Image when FLAT", "info": "The same piece as flat parts or in its box. Leave empty to show the line drawing." },
+    { "type": "header", "content": "Live street view" },
+    { "type": "paragraph", "content": "Paste a YouTube live link to show it as a column on the right, muted and playing. With both cities filled in, it follows the TAIPEI / NEW YORK switch." },
+    { "type": "text", "id": "live_ny", "label": "New York live link" },
+    { "type": "text", "id": "live_ny_label", "label": "New York place name", "default": "Times Square, New York" },
+    { "type": "text", "id": "live_taipei", "label": "Taipei live link" },
+    { "type": "text", "id": "live_taipei_label", "label": "Taipei place name", "default": "Taipei" },
+    { "type": "header", "content": "More" },
     { "type": "checkbox", "id": "show_clock", "label": "Show the live Taipei / New York clock", "default": true },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
     { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Top padding", "default": 52 },

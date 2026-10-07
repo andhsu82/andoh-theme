@@ -1,0 +1,31 @@
+{% comment %}
+  A muted, autoplaying YouTube live stream cropped to fill its box, with a small LIVE label.
+  Accepts:
+  - url: {String} a YouTube link (watch?v=, youtu.be/, /live/ or /embed/)
+  - label: {String} place name shown on the label
+  - class: {String} extra class, e.g. andoh-ny or andoh-tp (optional)
+{% endcomment %}
+{%- liquid
+  assign video_id = ''
+  if url contains 'v='
+    assign video_id = url | split: 'v=' | last | split: '&' | first
+  elsif url contains 'youtu.be/'
+    assign video_id = url | split: 'youtu.be/' | last | split: '?' | first
+  elsif url contains '/live/'
+    assign video_id = url | split: '/live/' | last | split: '?' | first
+  elsif url contains '/embed/'
+    assign video_id = url | split: '/embed/' | last | split: '?' | first
+  endif
+-%}
+{%- if video_id != blank -%}
+  <div class="andoh-live {{ class }}">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/{{ video_id | escape }}?autoplay=1&mute=1&controls=0&playsinline=1&rel=0&modestbranding=1&loop=1&playlist={{ video_id | escape }}"
+      title="Live view: {{ label | escape }}"
+      allow="autoplay; encrypted-media; picture-in-picture"
+      referrerpolicy="strict-origin-when-cross-origin"
+      tabindex="-1"
+    ></iframe>
+    <span class="andoh-live__label"><i aria-hidden="true"></i>Live · {{ label | escape }}</span>
+  </div>
+{%- endif -%}
