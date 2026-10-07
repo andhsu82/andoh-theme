@@ -280,20 +280,20 @@
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'andoh.css' | asset_url | stylesheet_tag }}
-    {%- if settings.andoh_use_fonts -%}
+    {%- unless settings.andoh_use_fonts == false -%}
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Reenie+Beanie&display=swap">
-    {%- endif -%}
+    {%- endunless -%}
     <style>
       :root { --andoh-accent: {{ settings.andoh_accent | default: '#D9381E' }}; }
     </style>
     <script>
       (function () {
         var root = document.documentElement;
-        {%- if settings.andoh_use_fonts %}
+        {%- unless settings.andoh_use_fonts == false %}
         root.classList.add('andoh-fonts');
-        {%- endif %}
+        {%- endunless %}
         try {
           var mode = localStorage.getItem('andoh-mode');
           var city = localStorage.getItem('andoh-city');
