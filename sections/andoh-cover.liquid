@@ -5,7 +5,18 @@
 -%}
 <div class="andoh-cover andoh-cover--{{ section.settings.height }} andoh-cover--{{ section.settings.position }} andoh-cover--{{ section.settings.text_color }}">
   <div class="andoh-cover__media">
-    {%- if image != blank -%}
+    {%- if section.settings.video != blank -%}
+      {{ section.settings.video | video_tag: autoplay: true, loop: true, muted: true, controls: false, playsinline: true, class: 'andoh-cover__video', image_size: '2000x' }}
+    {%- elsif section.settings.video_url != blank -%}
+      {%- assign v = section.settings.video_url -%}
+      <div class="andoh-cover__embed">
+        {%- if v.type == 'youtube' -%}
+          <iframe src="https://www.youtube-nocookie.com/embed/{{ v.id }}?autoplay=1&mute=1&loop=1&playlist={{ v.id }}&controls=0&modestbranding=1&playsinline=1&rel=0" title="{{ section.settings.heading | escape }}" allow="autoplay; encrypted-media" tabindex="-1" loading="eager"></iframe>
+        {%- else -%}
+          <iframe src="https://player.vimeo.com/video/{{ v.id }}?background=1&autoplay=1&loop=1&muted=1" title="{{ section.settings.heading | escape }}" allow="autoplay" tabindex="-1" loading="eager"></iframe>
+        {%- endif -%}
+      </div>
+    {%- elsif image != blank -%}
       {{ image | image_url: width: 3000 | image_tag: class: 'andoh-cover__img andoh-cover__img--desktop', sizes: '100vw', widths: '750, 1100, 1500, 2000, 2600, 3000', fetchpriority: 'high' }}
       {{ mobile_image | image_url: width: 1500 | image_tag: class: 'andoh-cover__img andoh-cover__img--mobile', sizes: '100vw', widths: '600, 900, 1200, 1500', fetchpriority: 'high' }}
     {%- else -%}
@@ -39,6 +50,8 @@
   "tag": "section",
   "class": "section andoh-cover-section",
   "settings": [
+    { "type": "video", "id": "video", "label": "Video", "info": "Upload an MP4. It plays silently on a loop, edge to edge, and replaces the image." },
+    { "type": "video_url", "id": "video_url", "label": "Or a YouTube or Vimeo link", "accept": ["youtube", "vimeo"], "info": "Used only when no video is uploaded. An uploaded video loads faster and looks cleaner." },
     { "type": "image_picker", "id": "image", "label": "Image", "info": "Shown edge to edge. 3000px wide or more looks best." },
     { "type": "image_picker", "id": "image_mobile", "label": "Phone image", "info": "Optional. A taller crop for phones." },
     { "type": "select", "id": "height", "label": "Height", "default": "full", "options": [

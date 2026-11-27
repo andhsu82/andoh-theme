@@ -829,3 +829,29 @@ html.andoh-fonts .header .header__heading,
 .header .list-menu--inline {
   align-items: center;
 }
+
+/* Cover video: silent loop filling the cover edge to edge */
+.andoh-cover__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.andoh-cover__embed {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.andoh-cover__embed iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: max(100%, 177.78vh);
+  height: max(100%, 56.25vw);
+  transform: translate(-50%, -50%);
+  border: 0;
+}
