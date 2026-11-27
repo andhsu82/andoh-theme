@@ -1330,3 +1330,13 @@ details[open] .header__word-search {
     font-size: 1.3rem;
   }
 }
+
+/* Shop and About match the words on the right: full colour (Dawn fades them to 75%), same size and spacing */
+.section-header .header__menu-item,
+.section-header .header__menu-item span {
+  color: rgb(var(--color-foreground));
+  font-family: var(--font-body-family);
+  font-weight: var(--font-body-weight);
+  font-size: 1.4rem;
+  letter-spacing: 0.02em;
+}
