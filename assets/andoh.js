@@ -50,6 +50,7 @@
     tick();
     setInterval(tick, 30000);
     initHeaderReveal();
+    initHeaderTone();
   }
 
   // Header that shows at the top of the page, hides once you scroll, and slides back in
@@ -97,6 +98,24 @@
     update();
   }
 
+  // White header text and logo while the header sits over the homepage cover photo;
+  // past the cover it turns dark again and gets the page background so it stays readable.
+  function initHeaderTone() {
+    var cover = document.querySelector('.andoh-cover');
+    var header = document.querySelector('.section-header');
+    if (!header) return;
+    root.classList.toggle('andoh-has-cover', !!cover);
+    function update() {
+      var bottom = cover ? cover.getBoundingClientRect().bottom : 0;
+      var overCover = !!cover && bottom > header.offsetHeight;
+      root.classList.toggle('andoh-header-light', overCover);
+      root.classList.toggle('andoh-header-solid', !overCover && window.scrollY > 40);
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  }
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
@@ -104,6 +123,7 @@
   }
 
   document.addEventListener('shopify:section:load', function () {
+    initHeaderTone();
     apply('mode', root.getAttribute('data-andoh-mode') || 'built');
     apply('city', root.getAttribute('data-andoh-city') || 'taipei');
   });

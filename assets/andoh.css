@@ -770,3 +770,36 @@ svg.andoh-draw {
     padding-top: var(--header-height, 9rem);
   }
 }
+
+/* Over the cover photo: white header text, icons and logo */
+html.andoh-header-light .section-header .header-wrapper {
+  --color-foreground: 255, 255, 255;
+}
+
+html.andoh-header-light .section-header .header__heading-logo {
+  filter: brightness(0) invert(1);
+}
+
+/* Menus, drawers and search that open from the header keep dark text on their own background */
+html.andoh-header-light .section-header .header__submenu,
+html.andoh-header-light .section-header .menu-drawer,
+html.andoh-header-light .section-header .search-modal,
+html.andoh-header-light .section-header .mega-menu__content {
+  --color-foreground: 17, 17, 17;
+}
+
+/* Past the cover, a floating header gets the page background back so text stays readable */
+html.andoh-header-solid .section-header .header-wrapper {
+  background: rgb(var(--color-background));
+}
+
+/* Where the header is not floating (phones, or with the hide-on-scroll option off), pull the cover up under it */
+@media not all and (hover: hover) and (min-width: 990px) {
+  html.andoh-has-cover #MainContent > .andoh-cover-section:first-child {
+    margin-top: calc(-1 * var(--header-height, 0px));
+  }
+}
+
+html.andoh-has-cover:not(.andoh-header-reveal) #MainContent > .andoh-cover-section:first-child {
+  margin-top: calc(-1 * var(--header-height, 0px));
+}
