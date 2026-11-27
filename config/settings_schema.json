@@ -1535,6 +1535,13 @@
       },
       {
         "type": "checkbox",
+        "id": "andoh_wordmark",
+        "label": "Use the andoh wordmark as the logo",
+        "default": true,
+        "info": "Built into the theme so it can change colour: white over the cover, maroon elsewhere. Turn off to use the logo image from the Logo settings. Logo width still sets its size."
+      },
+      {
+        "type": "checkbox",
         "id": "andoh_logo_hero",
         "label": "Large logo on the homepage cover",
         "default": true,
