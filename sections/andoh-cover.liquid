@@ -31,25 +31,26 @@
       assign s2 = section.settings.side_image_2
       assign s3 = section.settings.side_image_3
     -%}
-    <div
+    {%- assign side_tag = 'div' -%}
+    {%- if section.settings.side_link != blank -%}{%- assign side_tag = 'a' -%}{%- endif -%}
+    <{{ side_tag }}
       class="andoh-cover__side"
-      style="--andoh-side-w: {{ section.settings.side_width }}%;"
-      data-delay="{{ section.settings.side_delay | times: 1000 }}"
+      {% if section.settings.side_link != blank %}href="{{ section.settings.side_link }}" aria-label="{{ section.settings.button_label | default: 'Shop' | escape }}"{% else %}aria-hidden="true"{% endif %}
+      style="--andoh-side-w: {{ section.settings.side_width }}%; --andoh-side-open: {{ section.settings.side_open_width }}%;"
       data-interval="{{ section.settings.side_interval | times: 1000 }}"
-      aria-hidden="true"
     >
       {%- if s1 != blank -%}
-        {{ s1 | image_url: width: 1200 | image_tag: class: 'andoh-cover__side-img', sizes: '(min-width: 750px) 30vw, 0px', widths: '400, 600, 900, 1200', alt: '' }}
+        {{ s1 | image_url: width: 1600 | image_tag: class: 'andoh-cover__side-img', sizes: '(min-width: 750px) 60vw, 0px', widths: '600, 900, 1200, 1600', alt: '' }}
       {%- else -%}
         <img class="andoh-cover__side-img" src="{{ 'andoh-cover-side.jpg' | asset_url }}" width="1000" height="1491" alt="" fetchpriority="low">
       {%- endif -%}
       {%- if s2 != blank -%}
-        {{ s2 | image_url: width: 1200 | image_tag: class: 'andoh-cover__side-img', sizes: '(min-width: 750px) 30vw, 0px', widths: '400, 600, 900, 1200', alt: '', loading: 'lazy' }}
+        {{ s2 | image_url: width: 1600 | image_tag: class: 'andoh-cover__side-img', sizes: '(min-width: 750px) 60vw, 0px', widths: '600, 900, 1200, 1600', alt: '', loading: 'lazy' }}
       {%- endif -%}
       {%- if s3 != blank -%}
-        {{ s3 | image_url: width: 1200 | image_tag: class: 'andoh-cover__side-img', sizes: '(min-width: 750px) 30vw, 0px', widths: '400, 600, 900, 1200', alt: '', loading: 'lazy' }}
+        {{ s3 | image_url: width: 1600 | image_tag: class: 'andoh-cover__side-img', sizes: '(min-width: 750px) 60vw, 0px', widths: '600, 900, 1200, 1600', alt: '', loading: 'lazy' }}
       {%- endif -%}
-    </div>
+    </{{ side_tag }}>
   {%- endif -%}
   <div class="andoh-cover__content">
     <div class="andoh-cover__text">
@@ -221,7 +222,7 @@
       "id": "side_show",
       "label": "Show a side panel on the right",
       "default": true,
-      "info": "A narrow strip down the right edge, like In Common With. It starts showing the video, then cuts to the image. Hidden on phones."
+      "info": "A narrow strip down the right edge, like In Common With. Hover over it and it slides open across the cover. Hidden on phones."
     },
     {
       "type": "image_picker",
@@ -252,13 +253,13 @@
     },
     {
       "type": "range",
-      "id": "side_delay",
-      "label": "Seconds before the image cuts in",
-      "min": 0,
-      "max": 8,
-      "step": 0.5,
-      "unit": "s",
-      "default": 2.5
+      "id": "side_open_width",
+      "label": "Panel width on hover",
+      "min": 20,
+      "max": 70,
+      "step": 1,
+      "unit": "%",
+      "default": 50
     },
     {
       "type": "range",
@@ -269,6 +270,12 @@
       "step": 0.5,
       "unit": "s",
       "default": 4
+    },
+    {
+      "type": "url",
+      "id": "side_link",
+      "label": "Panel link",
+      "info": "Optional. Clicking the panel goes here, for example the product page."
     }
   ],
   "presets": [
