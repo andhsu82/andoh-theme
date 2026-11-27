@@ -1050,7 +1050,7 @@ html.andoh-header-light .section-header .header__heading-logo.andoh-wordmark {
   gap: 2rem !important;
   width: 100% !important;
   max-width: 144rem !important;
-  padding: 0.9rem var(--andoh-gutter-px, 1.6rem) !important;
+  padding: 1.4rem var(--andoh-gutter-px, 1.6rem) !important;
   margin: 0 auto !important;
   background: transparent !important;
 }
@@ -1059,7 +1059,7 @@ html.andoh-header-light .section-header .header__heading-logo.andoh-wordmark {
   display: flex !important;
   flex-direction: row !important;
   flex-wrap: nowrap !important;
-  align-items: baseline !important;
+  align-items: center !important;
   gap: 3.2rem !important;
   flex: 1 1 auto !important;
   min-width: 0 !important;
