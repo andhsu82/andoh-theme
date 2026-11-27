@@ -12,6 +12,8 @@
     "cover": {
       "type": "andoh-cover",
       "settings": {
+        "video": "shopify://files/videos/00187872_1080.mp4",
+        "video_url": "",
         "image": "shopify://shop_images/revelo_travertino_hero_shot.jpg",
         "height": "large",
         "position": "bottom-left",
@@ -21,8 +23,7 @@
         "heading": "Objects for slow rooms",
         "text": "<p>Furniture and homeware designed in New York and rooted in Taipei. Every piece is drawn to pack flat, slot together by hand and keep its footprint light.</p>",
         "button_label": "Shop all objects",
-        "button_link": "shopify://collections/all",
-        "video_file": "andoh-cover.mp4"
+        "button_link": "shopify://collections/all"
       }
     },
     "hero": {

@@ -7,9 +7,6 @@
   <div class="andoh-cover__media">
     {%- if section.settings.video != blank -%}
       {{ section.settings.video | video_tag: autoplay: true, loop: true, muted: true, controls: false, playsinline: true, class: 'andoh-cover__video', image_size: '2000x' }}
-    {%- elsif section.settings.video_file != blank -%}
-      {%- assign poster = section.settings.video_file | replace: '.mp4', '-poster.jpg' -%}
-      <video class="andoh-cover__video" src="{{ section.settings.video_file | asset_url }}" poster="{{ poster | asset_url }}" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
     {%- elsif section.settings.video_url != blank -%}
       {%- assign v = section.settings.video_url -%}
       <div class="andoh-cover__embed">
@@ -54,7 +51,6 @@
   "class": "section andoh-cover-section",
   "settings": [
     { "type": "video", "id": "video", "label": "Video", "info": "Upload an MP4. It plays silently on a loop, edge to edge, and replaces the image." },
-    { "type": "text", "id": "video_file", "label": "Video file in the theme", "info": "Set by Claude, for example andoh-cover.mp4. Used when no video is uploaded above." },
     { "type": "video_url", "id": "video_url", "label": "Or a YouTube or Vimeo link", "accept": ["youtube", "vimeo"], "info": "Used only when no video is uploaded. An uploaded video loads faster and looks cleaner." },
     { "type": "image_picker", "id": "image", "label": "Image", "info": "Shown edge to edge. 3000px wide or more looks best." },
     { "type": "image_picker", "id": "image_mobile", "label": "Phone image", "info": "Optional. A taller crop for phones." },
