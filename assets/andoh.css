@@ -983,3 +983,46 @@ html.andoh-page-fade.andoh-leaving body {
 html.andoh-header-light .section-header .header__heading-logo.andoh-wordmark {
   filter: none;
 }
+
+/* Cover text beside the logo, In Common With style: the large logo sits at 26% from the left,
+   a short tagline at 53%, both centred on the same horizontal line */
+.andoh-cover--logo-line .andoh-cover__content {
+  position: absolute;
+  inset: 0;
+  padding: 0;
+}
+
+.andoh-cover--logo-line .andoh-cover__text {
+  position: absolute;
+  left: 53%;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 17em;
+}
+
+.andoh-cover--logo-line .andoh-cover__heading {
+  font-family: var(--font-body-family);
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.3;
+  letter-spacing: 0;
+  margin: 0;
+  max-width: 12em;
+  text-wrap: balance;
+}
+
+.andoh-cover--logo-line .andoh-cover__label,
+.andoh-cover--logo-line .andoh-cover__body,
+.andoh-cover--logo-line .andoh-cover__link {
+  display: none;
+}
+
+/* Phones and tablets have no large logo, so the tagline sits bottom left */
+@media screen and (max-width: 989px) {
+  .andoh-cover--logo-line .andoh-cover__text {
+    left: var(--andoh-gutter-px, 1.6rem);
+    top: auto;
+    bottom: 3.2rem;
+    transform: none;
+  }
+}
