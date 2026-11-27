@@ -1027,13 +1027,18 @@ html.andoh-header-light .section-header .header__heading-logo.andoh-wordmark {
   }
 }
 
-/* Shopify cookie banner: one slim line across the bottom.
+/* Shopify cookie banner, In Common With style: a thin maroon bar across the bottom,
+   small white text on the left and plain-text buttons on the right.
    Shopify injects this banner itself, so these rules target its ids and class fragments broadly. */
 #shopify-pc__banner {
   padding: 0 !important;
   min-height: 0 !important;
-  font-size: 12px !important;
+  font-size: 13px !important;
   box-shadow: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: var(--andoh-ink, #3a0a08) !important;
+  color: var(--andoh-paper, #f9f9f6) !important;
 }
 
 #shopify-pc__banner [class*='__wrapper'] {
@@ -1042,10 +1047,12 @@ html.andoh-header-light .section-header .header__heading-logo.andoh-wordmark {
   flex-wrap: nowrap !important;
   align-items: center !important;
   justify-content: space-between !important;
-  gap: 1.6rem !important;
-  max-width: none !important;
-  padding: 0.6rem var(--andoh-gutter-px, 1.6rem) !important;
-  margin: 0 !important;
+  gap: 2rem !important;
+  width: 100% !important;
+  max-width: 144rem !important;
+  padding: 0.9rem var(--andoh-gutter-px, 1.6rem) !important;
+  margin: 0 auto !important;
+  background: transparent !important;
 }
 
 #shopify-pc__banner [class*='__body'] {
@@ -1059,44 +1066,67 @@ html.andoh-header-light .section-header .header__heading-logo.andoh-wordmark {
   padding: 0 !important;
 }
 
-#shopify-pc__banner [class*='body-title'],
+#shopify-pc__banner [class*='body-title'] {
+  display: none !important;
+}
+
 #shopify-pc__banner [class*='body-text'],
 #shopify-pc__banner h2,
 #shopify-pc__banner p,
-#shopify-pc__banner a {
-  font-size: 12px !important;
+#shopify-pc__banner a,
+#shopify-pc__banner button {
+  font-family: var(--font-body-family) !important;
+  font-size: 13px !important;
   line-height: 1.4 !important;
   font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  color: var(--andoh-paper, #f9f9f6) !important;
   margin: 0 !important;
   padding: 0 !important;
-  letter-spacing: 0 !important;
+}
+
+#shopify-pc__banner a {
+  text-decoration: underline !important;
+  text-underline-offset: 0.2em;
 }
 
 #shopify-pc__banner [class*='__btns'] {
   display: flex !important;
   flex-direction: row !important;
   flex-wrap: nowrap !important;
-  gap: 0.8rem !important;
+  align-items: center !important;
+  gap: 2rem !important;
   flex: 0 0 auto !important;
   width: auto !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 
+/* Buttons as plain words, no boxes */
 #shopify-pc__banner button {
-  font-size: 12px !important;
-  line-height: 1.2 !important;
-  padding: 0.4rem 1rem !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
   min-height: 0 !important;
   min-width: 0 !important;
   height: auto !important;
   width: auto !important;
-  margin: 0 !important;
-  border-radius: 0 !important;
+  cursor: pointer;
+  text-decoration: none !important;
+}
+
+#shopify-pc__banner button:hover,
+#shopify-pc__banner a:hover {
+  opacity: 0.7;
 }
 
 @media screen and (max-width: 749px) {
   #shopify-pc__banner [class*='__wrapper'] {
-    gap: 1rem !important;
+    gap: 1.2rem !important;
+  }
+
+  #shopify-pc__banner [class*='__btns'] {
+    gap: 1.2rem !important;
   }
 }
