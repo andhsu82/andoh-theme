@@ -1259,7 +1259,9 @@ html.andoh-header-light .section-header .header__heading-logo.andoh-wordmark {
   display: none;
 }
 
-/* One font for all three words; Shopify's sign-in button otherwise uses its own */
+/* One font for all the words on the right, the country picker included */
+.header__icons .localization-form__select,
+.header__icons .localization-form__select .button-text,
 .header__icon.header__word,
 .header__word .header__word-text,
 shopify-account.header__word,

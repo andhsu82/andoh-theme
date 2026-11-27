@@ -302,12 +302,16 @@
       {% render 'header-search', input_id: 'Search-In-Modal' %}
 
       {%- if shop.customer_accounts_enabled -%}
-        <shopify-account
-          menu="{{ settings.customer_account_menu | default: 'customer-account-main-menu' }}"
-          class="header__icon header__icon--account header__word link focus-inset"
-        >
-          <span slot="signed-out-avatar" class="header__word-text">Sign in</span>
-        </shopify-account>
+        {%- comment -%} A plain link instead of Shopify's account button, so it matches Search and Cart {%- endcomment -%}
+        {%- if customer -%}
+          <a href="{{ routes.account_url }}" class="header__icon header__icon--account header__word link focus-inset">
+            <span class="header__word-text">Account</span>
+          </a>
+        {%- else -%}
+          <a href="{{ routes.account_login_url }}" class="header__icon header__icon--account header__word link focus-inset">
+            <span class="header__word-text">Sign in</span>
+          </a>
+        {%- endif -%}
       {%- endif -%}
 
       {%- for block in section.blocks -%}
