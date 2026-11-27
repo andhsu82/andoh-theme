@@ -753,3 +753,20 @@ svg.andoh-draw {
     transform: none;
   }
 }
+
+/* Transparent header: the page or the cover image shows through */
+.section-header .header-wrapper {
+  background: transparent;
+  background-image: none;
+}
+
+.section-header .header-wrapper--border-bottom {
+  border-bottom: 0;
+}
+
+/* The desktop header floats over the page, so pages without a cover start below it */
+@media (hover: hover) and (min-width: 990px) {
+  html.andoh-header-reveal #MainContent > .shopify-section:first-child:not(.andoh-cover-section) {
+    padding-top: var(--header-height, 9rem);
+  }
+}
