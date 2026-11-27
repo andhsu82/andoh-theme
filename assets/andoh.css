@@ -1056,18 +1056,26 @@ html.andoh-header-light .section-header .header__heading-logo.andoh-wordmark {
 }
 
 #shopify-pc__banner [class*='__body'] {
-  display: flex !important;
-  flex-wrap: wrap;
-  align-items: baseline !important;
-  gap: 0 0.6rem !important;
+  display: block !important;
   flex: 1 1 auto !important;
   min-width: 0 !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 
-#shopify-pc__banner [class*='body-title'] {
-  display: none !important;
+/* "Cookie consent" title runs inline, in front of the message */
+#shopify-pc__banner [class*='title'],
+#shopify-pc__banner h2,
+#shopify-pc__banner h3 {
+  display: inline !important;
+  margin: 0 0.8rem 0 0 !important;
+  font-weight: 500 !important;
+}
+
+#shopify-pc__banner [class*='body-text'],
+#shopify-pc__banner [class*='__body'] p,
+#shopify-pc__banner [class*='__body'] div {
+  display: inline !important;
 }
 
 #shopify-pc__banner [class*='body-text'],
@@ -1113,7 +1121,8 @@ html.andoh-header-light .section-header .header__heading-logo.andoh-wordmark {
   height: auto !important;
   width: auto !important;
   cursor: pointer;
-  text-decoration: none !important;
+  text-decoration: underline !important;
+  text-underline-offset: 0.2em;
 }
 
 #shopify-pc__banner button:hover,
