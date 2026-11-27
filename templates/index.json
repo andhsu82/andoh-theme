@@ -21,10 +21,14 @@
         "overlay": 15,
         "eyebrow": "",
         "heading": "Objects with a point of view",
-        "text": "<p>Furniture and homeware designed in New York and rooted in Taipei. Every piece is drawn to pack flat, slot together by hand and keep its footprint light.</p>",
+        "text": "",
         "button_label": "Shop all objects",
         "button_link": "shopify://collections/all",
-        "side_link": "/products/revelo-side-table"
+        "side_show": true,
+        "side_width": 36,
+        "side_open_width": 50,
+        "side_interval": 4,
+        "side_link": ""
       }
     },
     "hero": {
