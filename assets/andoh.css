@@ -804,7 +804,16 @@ html.andoh-has-cover:not(.andoh-header-reveal) #MainContent > .andoh-cover-secti
   margin-top: calc(-1 * var(--header-height, 0px));
 }
 
-/* Logo sized to the menu text and centred on the same line */
+/* Logo centred on the same line as the menu. The homepage wraps the logo in an h1,
+   so it must not pick up the andoh heading margins. */
+html.andoh-fonts .header .header__heading,
+.header .header__heading {
+  margin: 0;
+  line-height: 0;
+  display: flex;
+  align-items: center;
+}
+
 .header .header__heading-link {
   padding: 0;
   display: flex;
@@ -814,12 +823,6 @@ html.andoh-has-cover:not(.andoh-header-reveal) #MainContent > .andoh-cover-secti
 .header .header__heading-logo-wrapper {
   display: flex;
   align-items: center;
-}
-
-.header .header__heading-logo {
-  height: var(--andoh-body-size, 18px);
-  width: auto;
-  max-width: none;
 }
 
 .header .header__inline-menu,
