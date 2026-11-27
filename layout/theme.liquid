@@ -286,7 +286,7 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;0,700;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Reenie+Beanie&display=swap">
     {%- endunless -%}
     <style>
-      :root { --andoh-accent: {{ settings.andoh_accent | default: '#D9381E' }}; }
+      :root { --andoh-accent: {{ settings.andoh_accent | default: '#E10001' }}; }
       :root {
         --andoh-title-scale: {{ settings.andoh_title_scale | default: 140 | divided_by: 100.0 }};
         --andoh-title-weight: {{ settings.andoh_title_weight | default: '600' }};
@@ -320,6 +320,12 @@
         {%- endunless %}
         {%- unless settings.andoh_header_reveal == false %}
         root.classList.add('andoh-header-reveal', 'andoh-header-shown');
+        {%- endunless %}
+        {%- if template.name == 'index' and settings.andoh_logo_hero != false %}
+        root.classList.add('andoh-logo-hero-on');
+        {%- endif %}
+        {%- unless settings.andoh_page_fade == false %}
+        root.classList.add('andoh-page-fade');
         {%- endunless %}
         try {
           var mode = localStorage.getItem('andoh-mode');

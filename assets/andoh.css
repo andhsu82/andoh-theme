@@ -3,12 +3,13 @@
    monospace workshop labels, a handwritten note layer, and two switches (FLAT / BUILT, TAIPEI / NEW YORK). */
 
 :root {
-  --andoh-paper: #f6f5f1;
-  --andoh-ink: #111111;
-  --andoh-muted: #6b6a64;
-  --andoh-line: #d9d7cf;
-  --andoh-tile: #eceae3;
-  --andoh-accent: #d9381e;
+  --andoh-paper: #f9f9f6;
+  --andoh-ink: #3a0a08;
+  --andoh-muted: #7a5c58;
+  --andoh-line: #e3dcd6;
+  --andoh-tile: #f1f0eb;
+  --andoh-accent: #e10001;
+  --andoh-accent-deep: #c40000;
   --andoh-display: 'Cormorant', 'Cormorant Garamond', Garamond, 'Times New Roman', serif;
   --andoh-text: 'Cormorant Garamond', 'Cormorant', Garamond, 'Times New Roman', serif;
   --andoh-mono: var(--andoh-text);
@@ -107,6 +108,26 @@ html.andoh-fonts .andoh-arrives__text {
 .header__menu-item:hover span,
 .card__heading a:hover {
   text-decoration-color: var(--andoh-accent);
+}
+
+/* Titles and links go red on hover, the way In Common With does it */
+.card__heading a,
+.card-information,
+.andoh-link,
+.footer a {
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.card-wrapper:hover .card__heading a,
+.card__heading a:hover,
+.andoh-link:hover,
+.footer a:hover,
+.rte a:hover {
+  color: var(--andoh-accent);
+}
+
+.card-wrapper:hover .card-information .price {
+  color: var(--andoh-accent-deep);
 }
 
 /* Switches */
@@ -785,7 +806,7 @@ html.andoh-header-light .section-header .header__submenu,
 html.andoh-header-light .section-header .menu-drawer,
 html.andoh-header-light .section-header .search-modal,
 html.andoh-header-light .section-header .mega-menu__content {
-  --color-foreground: 17, 17, 17;
+  --color-foreground: 58, 10, 8;
 }
 
 /* Past the cover, a floating header gets the page background back so text stays readable */
@@ -854,4 +875,94 @@ html.andoh-fonts .header .header__heading,
   height: max(100%, 56.25vw);
   transform: translate(-50%, -50%);
   border: 0;
+}
+
+/* ---------- Header transitions (In Common With pattern) ---------- */
+
+/* Colour, background and logo tint fade rather than snap */
+.section-header .header-wrapper {
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+.section-header .header__menu-item,
+.section-header .header__icon,
+.section-header .header__heading-link {
+  transition: color 0.35s ease;
+}
+
+.section-header .header__heading-logo {
+  transition: filter 0.35s ease;
+}
+
+/* Hovered menu items go red */
+.section-header .header__menu-item:hover,
+.section-header .header__icon:hover {
+  color: var(--andoh-accent);
+}
+
+html.andoh-header-light .section-header .header__menu-item:hover,
+html.andoh-header-light .section-header .header__icon:hover {
+  color: #fff;
+  opacity: 0.7;
+}
+
+/* Logo starts large at the middle left of the homepage cover, then glides into the header */
+html.andoh-logo-hero-on .section-header .header__heading-logo-wrapper,
+html.andoh-logo-hero-on .section-header .header__heading-link > .h2 {
+  transform-origin: left center;
+  transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.3s ease;
+  will-change: transform;
+}
+
+html.andoh-logo-hero-on.andoh-logo-hero .section-header .header__heading-logo-wrapper,
+html.andoh-logo-hero-on.andoh-logo-hero .section-header .header__heading-link > .h2 {
+  transform: translate(var(--andoh-logo-dx, 0px), var(--andoh-logo-dy, 0px)) scale(var(--andoh-logo-scale, 1));
+}
+
+/* No animation for the very first placement, and no logo flash before it is placed */
+html.andoh-logo-hero-on:not(.andoh-header-ready) .section-header .header__heading-logo-wrapper,
+html.andoh-logo-hero-on:not(.andoh-header-ready) .section-header .header__heading-link > .h2 {
+  transition: none;
+  opacity: 0;
+}
+
+/* The header box itself must not clip the large logo */
+html.andoh-logo-hero-on .section-header,
+html.andoh-logo-hero-on .section-header .header-wrapper,
+html.andoh-logo-hero-on .section-header .header {
+  overflow: visible;
+}
+
+/* Page fade: out on click, in on arrival */
+@keyframes andoh-page-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+html.andoh-page-fade body {
+  animation: andoh-page-in 0.45s ease backwards;
+}
+
+html.andoh-page-fade body {
+  transition: opacity 0.25s ease;
+}
+
+html.andoh-page-fade.andoh-leaving body {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.andoh-page-fade body {
+    animation: none;
+    transition: none;
+  }
+
+  html.andoh-logo-hero-on .section-header .header__heading-logo-wrapper,
+  .section-header .header-wrapper {
+    transition: none;
+  }
 }

@@ -1474,8 +1474,8 @@
         "type": "color",
         "id": "andoh_accent",
         "label": "Accent color",
-        "info": "Try #D9381E (vermilion) or #FF5A1F (orange).",
-        "default": "#D9381E"
+        "info": "In Common With red is #E10001. Try #D9381E (vermilion) for a warmer edge.",
+        "default": "#E10001"
       },
       {
         "type": "checkbox",
@@ -1532,6 +1532,19 @@
         "label": "Hide the header while scrolling, show it near the top",
         "default": true,
         "info": "On computers only. Phones and tablets always show the header."
+      },
+      {
+        "type": "checkbox",
+        "id": "andoh_logo_hero",
+        "label": "Large logo on the homepage cover",
+        "default": true,
+        "info": "On computers, the logo starts large at the middle left of the cover and glides into the header when you scroll or move to the top."
+      },
+      {
+        "type": "checkbox",
+        "id": "andoh_page_fade",
+        "label": "Fade between pages",
+        "default": true
       },
       {
         "type": "header",
