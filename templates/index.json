@@ -15,7 +15,7 @@
         "video": "shopify://files/videos/11025693-hd_4096_2160_30fps.mp4",
         "video_url": "",
         "image": "shopify://shop_images/revelo_travertino_hero_shot.jpg",
-        "height": "large",
+        "height": "full",
         "position": "logo-line",
         "text_color": "light",
         "overlay": 15,
