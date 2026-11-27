@@ -1278,8 +1278,8 @@ shopify-account.header__word,
 shopify-account.header__word [slot] {
   font-family: var(--font-body-family) !important;
   font-style: var(--font-body-style) !important;
-  font-weight: var(--font-body-weight) !important;
-  font-size: 1.4rem !important;
+  font-weight: var(--andoh-nav-weight, 600) !important;
+  font-size: var(--andoh-nav-size, 16px) !important;
   letter-spacing: 0.02em !important;
   line-height: 1 !important;
   color: rgb(var(--color-foreground)) !important;
@@ -1307,7 +1307,7 @@ shopify-account.header__word::part(trigger) {
   margin: 0;
   padding: 0;
   text-decoration: none;
-  font-size: 1.4rem;
+  font-size: var(--andoh-nav-size, 16px);
   letter-spacing: 0.02em;
   white-space: nowrap;
 }
@@ -1349,8 +1349,8 @@ details[open] .header__word-search {
 .section-header .header__menu-item,
 .section-header .header__menu-item span {
   font-family: var(--font-body-family);
-  font-weight: var(--font-body-weight);
-  font-size: 1.4rem;
+  font-weight: var(--andoh-nav-weight, 600);
+  font-size: var(--andoh-nav-size, 16px);
   letter-spacing: 0.02em;
 }
 

@@ -283,7 +283,7 @@
     {%- unless settings.andoh_use_fonts == false -%}
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;0,700;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Reenie+Beanie&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;0,700;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Reenie+Beanie&display=swap">
     {%- endunless -%}
     <style>
       :root { --andoh-accent: {{ settings.andoh_accent | default: '#E10001' }}; }
@@ -294,6 +294,8 @@
         --andoh-title-tracking: {{ settings.andoh_title_tracking | default: -1 | divided_by: 100.0 }}em;
         --andoh-title-gap: {{ settings.andoh_title_gap | default: 4 | divided_by: 10.0 }}em;
         --andoh-hero-size: {{ settings.andoh_hero_size | default: 88 }}px;
+        --andoh-nav-size: {{ settings.andoh_nav_size | default: 16 }}px;
+        --andoh-nav-weight: {{ settings.andoh_nav_weight | default: '600' }};
         --andoh-body-size: {{ settings.andoh_body_size | default: 18 }}px;
         --andoh-body-line: {{ settings.andoh_body_line | default: 145 | divided_by: 100.0 }};
         --andoh-para-gap: {{ settings.andoh_para_gap | default: 8 | divided_by: 10.0 }}em;

@@ -1534,6 +1534,28 @@
         "info": "On computers only. Phones and tablets always show the header."
       },
       {
+        "type": "range",
+        "id": "andoh_nav_size",
+        "label": "Header menu text size",
+        "min": 12,
+        "max": 22,
+        "step": 1,
+        "unit": "px",
+        "default": 16
+      },
+      {
+        "type": "select",
+        "id": "andoh_nav_weight",
+        "label": "Header menu text weight",
+        "default": "600",
+        "options": [
+          { "value": "400", "label": "Regular" },
+          { "value": "500", "label": "Medium" },
+          { "value": "600", "label": "Semibold" },
+          { "value": "700", "label": "Bold" }
+        ]
+      },
+      {
         "type": "checkbox",
         "id": "andoh_wordmark",
         "label": "Use the andoh wordmark as the logo",
