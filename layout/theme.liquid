@@ -324,7 +324,9 @@
         try {
           var mode = localStorage.getItem('andoh-mode');
           var city = localStorage.getItem('andoh-city');
+          {%- unless settings.andoh_show_mode_switch == false %}
           if (mode === 'flat' || mode === 'built') root.setAttribute('data-andoh-mode', mode);
+          {%- endunless %}
           if (city === 'taipei' || city === 'ny') root.setAttribute('data-andoh-city', city);
         } catch (e) {}
       })();

@@ -130,7 +130,7 @@
     "customer_account_menu": "customer-account-main-menu",
     "andoh_accent": "#D9381E",
     "andoh_use_fonts": true,
-    "andoh_show_mode_switch": true,
+    "andoh_show_mode_switch": false,
     "andoh_show_city_switch": false,
     "sections": {
       "main-password-header": {
