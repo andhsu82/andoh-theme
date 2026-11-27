@@ -1245,8 +1245,48 @@ html.andoh-header-light .section-header .header__heading-logo.andoh-wordmark {
 }
 
 .header__icons {
-  gap: 2.4rem;
+  gap: 0;
   align-items: center;
+  padding-right: 0;
+}
+
+/* Every word gets the same space before it; empty wrappers take none */
+.header__icons .header__word {
+  margin: 0 0 0 2.4rem !important;
+}
+
+.header__icons > .desktop-localization-wrapper:empty {
+  display: none;
+}
+
+/* One font for all three words; Shopify's sign-in button otherwise uses its own */
+.header__icon.header__word,
+.header__word .header__word-text,
+shopify-account.header__word,
+shopify-account.header__word [slot] {
+  font-family: var(--font-body-family) !important;
+  font-style: var(--font-body-style) !important;
+  font-weight: var(--font-body-weight) !important;
+  font-size: 1.4rem !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1 !important;
+  color: rgb(var(--color-foreground)) !important;
+}
+
+shopify-account.header__word {
+  --shopify-account-font-family: var(--font-body-family);
+  padding: 0 !important;
+  min-width: 0 !important;
+}
+
+shopify-account.header__word::part(button),
+shopify-account.header__word::part(trigger) {
+  font: inherit !important;
+  color: inherit !important;
+  padding: 0 !important;
+  min-width: 0 !important;
+  background: none !important;
+  border: 0 !important;
 }
 
 .header__icon.header__word {
@@ -1280,8 +1320,8 @@ details[open] .header__word-search {
 }
 
 @media screen and (max-width: 749px) {
-  .header__icons {
-    gap: 1.4rem;
+  .header__icons .header__word {
+    margin-left: 1.4rem !important;
   }
 
   .header__icon.header__word {
