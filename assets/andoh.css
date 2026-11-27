@@ -1072,8 +1072,15 @@ html.andoh-header-light .section-header .header__heading-logo.andoh-wordmark {
 #shopify-pc__banner h2,
 #shopify-pc__banner h3 {
   display: block !important;
+  position: static !important;
   flex: 0 0 auto !important;
   white-space: nowrap !important;
+  width: auto !important;
+  height: auto !important;
+  clip: auto !important;
+  clip-path: none !important;
+  overflow: visible !important;
+  transform: none !important;
   margin: 0 !important;
   font-weight: 500 !important;
 }
@@ -1118,6 +1125,14 @@ html.andoh-header-light .section-header .header__heading-logo.andoh-wordmark {
 
 #shopify-pc__banner [class*='__btns'] {
   gap: 1.2rem !important;
+  justify-content: flex-end !important;
+}
+
+#shopify-pc__banner [class*='__btns'] > * {
+  flex: 0 0 auto !important;
+  width: auto !important;
+  min-width: 0 !important;
+  margin: 0 !important;
 }
 
 /* Buttons as plain words, no boxes */
