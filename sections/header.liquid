@@ -125,12 +125,14 @@
 
   /* andoh: the words on the right sit as far from the right edge as their text sits from the top
      (header padding + half the 44px tap area minus the 14px text) */
-  .header.page-width {
+  .header.page-width,
+  .header:not(.drawer-menu).page-width {
     padding-right: calc({{ section.settings.padding_top | times: 0.5 | round: 0 }}px + 1.5rem);
   }
 
   @media screen and (min-width: 990px) {
-    .header.page-width {
+    .header.page-width,
+    .header:not(.drawer-menu).page-width {
       padding-right: calc({{ section.settings.padding_top }}px + 1.5rem);
     }
   }
