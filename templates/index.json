@@ -9,8 +9,24 @@
  */
 {
   "sections": {
+    "cover": {
+      "type": "andoh-cover",
+      "settings": {
+        "image": "shopify://shop_images/revelo_travertino_hero_shot.jpg",
+        "height": "large",
+        "position": "bottom-left",
+        "text_color": "light",
+        "overlay": 15,
+        "eyebrow": "",
+        "heading": "Objects for slow rooms",
+        "text": "<p>Furniture and homeware designed in New York and rooted in Taipei. Every piece is drawn to pack flat, slot together by hand and keep its footprint light.</p>",
+        "button_label": "Shop all objects",
+        "button_link": "shopify://collections/all"
+      }
+    },
     "hero": {
       "type": "andoh-hero",
+      "disabled": true,
       "settings": {
         "eyebrow": "Collection 01 · Objects for slow rooms",
         "heading": "Furniture that arrives flat and lives fully.",
@@ -25,46 +41,39 @@
         "color_scheme": "scheme-1",
         "padding_top": 52,
         "padding_bottom": 52
-      },
-      "disabled": true
-    },
-    "divider_1": {
-      "type": "andoh-divider",
-      "settings": {
-        "height": 44,
-        "color_scheme": ""
       }
     },
-    "objects": {
-      "type": "featured-collection",
+    "new": {
+      "type": "andoh-feature",
       "settings": {
-        "collection": "all",
-        "products_to_show": 6,
-        "title": "Objects",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 3,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
+        "eyebrow": "New",
+        "product": "",
+        "ratio": "wide",
+        "heading": "",
+        "text": "",
+        "link_label": "Shop all objects",
+        "link": "shopify://collections/all",
         "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 52,
-        "padding_bottom": 52
-      },
-      "disabled": true
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     },
-    "divider_2": {
+    "featured": {
+      "type": "andoh-feature",
+      "settings": {
+        "eyebrow": "Featured",
+        "product": "",
+        "ratio": "wide",
+        "heading": "",
+        "text": "",
+        "link_label": "Shop all objects",
+        "link": "shopify://collections/all",
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "divider_1": {
       "type": "andoh-divider",
       "settings": {
         "height": 44,
@@ -81,135 +90,6 @@
         "color_scheme": "",
         "padding_top": 52,
         "padding_bottom": 52
-      }
-    },
-    "lookbook": {
-      "type": "andoh-lookbook",
-      "settings": {
-        "heading": "In other people's rooms",
-        "credit": "Space: Name Surname · Photo: Name Surname",
-        "link_label": "See all spaces",
-        "link": "/pages/lookbook",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      },
-      "disabled": true
-    },
-    "divider_3": {
-      "type": "andoh-divider",
-      "settings": {
-        "height": 44,
-        "color_scheme": ""
-      },
-      "disabled": true
-    },
-    "letters": {
-      "type": "newsletter",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Letters",
-            "heading_size": "h2"
-          }
-        },
-        "paragraph": {
-          "type": "paragraph",
-          "settings": {
-            "text": "<p>A short note when something new is ready, nothing more.</p>"
-          }
-        },
-        "email_form": {
-          "type": "email_form",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "heading",
-        "paragraph",
-        "email_form"
-      ],
-      "settings": {
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "padding_top": 52,
-        "padding_bottom": 52
-      }
-    },
-    "intro": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Objects for slow rooms",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Furniture and homeware designed in New York and rooted in Taipei. Every piece is drawn to pack flat, slot together by hand and keep its footprint light.</p>"
-          }
-        },
-        "button": {
-          "type": "button",
-          "settings": {
-            "button_label": "Shop all objects",
-            "button_link": "shopify://collections/all",
-            "button_style_secondary": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text",
-        "button"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "left",
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "padding_top": 64,
-        "padding_bottom": 40
-      },
-      "disabled": true
-    },
-    "new": {
-      "type": "andoh-feature",
-      "settings": {
-        "eyebrow": "New",
-        "product": "",
-        "image": "",
-        "ratio": "wide",
-        "heading": "",
-        "text": "",
-        "link_label": "Shop all objects",
-        "link": "shopify://collections/all",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "featured": {
-      "type": "andoh-feature",
-      "settings": {
-        "eyebrow": "Featured",
-        "product": "",
-        "image": "",
-        "ratio": "wide",
-        "heading": "",
-        "text": "",
-        "link_label": "Shop all objects",
-        "link": "shopify://collections/all",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     },
     "trade": {
@@ -243,21 +123,21 @@
         "text",
         "button"
       ],
+      "disabled": true,
       "settings": {
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
+        "mobile_content_alignment": "left",
         "section_color_scheme": "scheme-1",
         "color_scheme": "scheme-1",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
         "padding_top": 36,
         "padding_bottom": 36
-      },
-      "disabled": true
+      }
     },
     "collections": {
       "type": "rich-text",
@@ -294,38 +174,155 @@
         "padding_bottom": 52
       }
     },
+    "divider_2": {
+      "type": "andoh-divider",
+      "settings": {
+        "height": 44,
+        "color_scheme": ""
+      }
+    },
+    "lookbook": {
+      "type": "andoh-lookbook",
+      "disabled": true,
+      "settings": {
+        "heading": "In other people's rooms",
+        "credit": "Space: Name Surname · Photo: Name Surname",
+        "link_label": "See all spaces",
+        "link": "/pages/lookbook",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "letters": {
+      "type": "newsletter",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Letters",
+            "heading_size": "h2"
+          }
+        },
+        "paragraph": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>A short note when something new is ready, nothing more.</p>"
+          }
+        },
+        "email_form": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading",
+        "paragraph",
+        "email_form"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
     "journal": {
       "type": "featured-blog",
+      "disabled": true,
       "settings": {
-        "heading": "Lately",
-        "heading_size": "h2",
         "blog": "news",
         "post_limit": 3,
+        "heading": "Lately",
+        "heading_size": "h2",
         "columns_desktop": 3,
-        "color_scheme": "scheme-1",
+        "show_view_all": true,
         "show_image": true,
         "show_date": true,
         "show_author": false,
-        "show_view_all": true,
+        "color_scheme": "scheme-1",
         "padding_top": 36,
         "padding_bottom": 64
-      },
-      "disabled": true
+      }
     },
-    "cover": {
-      "type": "andoh-cover",
+    "objects": {
+      "type": "featured-collection",
+      "disabled": true,
       "settings": {
-        "image": "",
-        "image_mobile": "",
-        "height": "full",
-        "position": "bottom-left",
-        "text_color": "light",
-        "overlay": 15,
-        "eyebrow": "",
-        "heading": "Objects for slow rooms",
-        "text": "<p>Furniture and homeware designed in New York and rooted in Taipei. Every piece is drawn to pack flat, slot together by hand and keep its footprint light.</p>",
-        "button_label": "Shop all objects",
-        "button_link": "shopify://collections/all"
+        "collection": "all",
+        "products_to_show": 6,
+        "title": "Objects",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 3,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "divider_3": {
+      "type": "andoh-divider",
+      "disabled": true,
+      "settings": {
+        "height": 44,
+        "color_scheme": ""
+      }
+    },
+    "intro": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Objects for slow rooms",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Furniture and homeware designed in New York and rooted in Taipei. Every piece is drawn to pack flat, slot together by hand and keep its footprint light.</p>"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop all objects",
+            "button_link": "shopify://collections/all",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "button"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "padding_top": 64,
+        "padding_bottom": 40
       }
     }
   },
