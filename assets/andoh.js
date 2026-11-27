@@ -51,6 +51,7 @@
     setInterval(tick, 30000);
     initHeader();
     initPageFade();
+    initCoverSide();
   }
 
   // One controller for the header, modelled on the In Common With interaction:
@@ -203,6 +204,30 @@
     });
   }
 
+  // Cover side panel: after a pause, cut to the first image; with several images, keep cutting between them.
+  function initCoverSide() {
+    document.querySelectorAll('.andoh-cover__side').forEach(function (panel) {
+      if (panel.dataset.andohBound) return;
+      panel.dataset.andohBound = '1';
+      var imgs = panel.querySelectorAll('.andoh-cover__side-img');
+      if (!imgs.length) return;
+      var still =
+        (window.Shopify && Shopify.designMode) || window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var delay = still ? 0 : parseInt(panel.dataset.delay, 10) || 0;
+      var interval = parseInt(panel.dataset.interval, 10) || 4000;
+      var index = -1;
+      function next() {
+        if (index >= 0) imgs[index].classList.remove('is-on');
+        index = (index + 1) % imgs.length;
+        imgs[index].classList.add('is-on');
+      }
+      setTimeout(function () {
+        next();
+        if (imgs.length > 1 && !still) setInterval(next, interval);
+      }, delay);
+    });
+  }
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
@@ -211,6 +236,7 @@
 
   document.addEventListener('shopify:section:load', function () {
     initHeader();
+    initCoverSide();
     apply('mode', root.getAttribute('data-andoh-mode') || 'built');
     apply('city', root.getAttribute('data-andoh-city') || 'taipei');
   });

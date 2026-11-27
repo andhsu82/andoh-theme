@@ -1164,3 +1164,36 @@ html.andoh-header-light .section-header .header__heading-logo.andoh-wordmark {
     gap: 1.2rem !important;
   }
 }
+
+/* Cover side panel, In Common With style: a narrow strip on the right edge that first shows the
+   video underneath, then hard-cuts to its own image (and between images if there are several) */
+.andoh-cover__side {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: var(--andoh-side-w, 16%);
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.andoh-cover__side-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+}
+
+.andoh-cover__side-img.is-on {
+  opacity: 1;
+}
+
+@media screen and (max-width: 749px) {
+  .andoh-cover__side {
+    display: none;
+  }
+}
