@@ -1,0 +1,3 @@
+{%- comment -%} The cart as a word, In Common With style: "Cart" or "Cart (2)". {%- endcomment -%}
+<span class="header__word-text">Cart{% if cart.item_count > 0 %} ({{ cart.item_count }}){% endif %}</span>
+<span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
