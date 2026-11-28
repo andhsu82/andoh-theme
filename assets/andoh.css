@@ -1484,3 +1484,32 @@ details[open] .header__word-search {
     justify-content: center;
   }
 }
+
+/* Drawing on the cover, centred in the gap between the large logo (from 26%) and the tagline (at 53%) */
+.andoh-cover__drawing {
+  display: none;
+}
+
+.andoh-cover--logo-line .andoh-cover__drawing {
+  display: block;
+  position: absolute;
+  left: 46.5%;
+  top: 50%;
+  height: var(--andoh-drawing-h, 40%);
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.andoh-cover__drawing img {
+  display: block;
+  height: 100%;
+  width: auto;
+  max-width: none;
+}
+
+@media screen and (max-width: 989px) {
+  .andoh-cover--logo-line .andoh-cover__drawing {
+    display: none;
+  }
+}

@@ -52,6 +52,15 @@
       {%- endif -%}
     </{{ side_tag }}>
   {%- endif -%}
+  {%- if section.settings.drawing_show -%}
+    <div class="andoh-cover__drawing" style="--andoh-drawing-h: {{ section.settings.drawing_height }}%;" aria-hidden="true">
+      {%- if section.settings.drawing != blank -%}
+        {{ section.settings.drawing | image_url: width: 900 | image_tag: alt: '', loading: 'eager' }}
+      {%- else -%}
+        <img src="{{ 'andoh-plum-maroon.png' | asset_url }}" width="600" height="903" alt="" loading="eager">
+      {%- endif -%}
+    </div>
+  {%- endif -%}
   <div class="andoh-cover__content">
     <div class="andoh-cover__text">
       {%- if section.settings.eyebrow != blank -%}
@@ -212,6 +221,33 @@
       "type": "url",
       "id": "button_link",
       "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Drawing"
+    },
+    {
+      "type": "checkbox",
+      "id": "drawing_show",
+      "label": "Show a drawing between the logo and the heading",
+      "default": true,
+      "info": "Used with the Beside the logo text position. Hidden on phones."
+    },
+    {
+      "type": "image_picker",
+      "id": "drawing",
+      "label": "Drawing",
+      "info": "A transparent PNG. Leave empty to use the maroon plum blossom built into the theme."
+    },
+    {
+      "type": "range",
+      "id": "drawing_height",
+      "label": "Drawing height",
+      "min": 15,
+      "max": 80,
+      "step": 1,
+      "unit": "%",
+      "default": 40
     },
     {
       "type": "header",
