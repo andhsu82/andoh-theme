@@ -115,7 +115,7 @@
     "social_tiktok_link": "",
     "social_twitter_link": "",
     "social_snapchat_link": "",
-    "social_pinterest_link": "",
+    "social_pinterest_link": "https://www.pinterest.com/Andhsu/products/",
     "social_tumblr_link": "",
     "social_vimeo_link": "",
     "predictive_search_enabled": true,
@@ -150,46 +150,46 @@
     "color_schemes": {
       "scheme-1": {
         "settings": {
-          "background": "#F9F9F6",
+          "background": "#f9f9f6",
           "background_gradient": "",
-          "text": "#3A0A08",
-          "button": "#3A0A08",
-          "button_label": "#F9F9F6",
-          "secondary_button_label": "#3A0A08",
-          "shadow": "#3A0A08"
+          "text": "#3a0a08",
+          "button": "#3a0a08",
+          "button_label": "#f9f9f6",
+          "secondary_button_label": "#3a0a08",
+          "shadow": "#3a0a08"
         }
       },
       "scheme-2": {
         "settings": {
-          "background": "#F1F0EB",
+          "background": "#f1f0eb",
           "background_gradient": "",
-          "text": "#3A0A08",
-          "button": "#3A0A08",
-          "button_label": "#F1F0EB",
-          "secondary_button_label": "#3A0A08",
-          "shadow": "#3A0A08"
+          "text": "#3a0a08",
+          "button": "#3a0a08",
+          "button_label": "#f1f0eb",
+          "secondary_button_label": "#3a0a08",
+          "shadow": "#3a0a08"
         }
       },
       "scheme-3": {
         "settings": {
-          "background": "#3A0A08",
+          "background": "#3a0a08",
           "background_gradient": "",
-          "text": "#F9F9F6",
-          "button": "#F9F9F6",
-          "button_label": "#3A0A08",
-          "secondary_button_label": "#F9F9F6",
-          "shadow": "#3A0A08"
+          "text": "#f9f9f6",
+          "button": "#f9f9f6",
+          "button_label": "#3a0a08",
+          "secondary_button_label": "#f9f9f6",
+          "shadow": "#3a0a08"
         }
       },
       "scheme-4": {
         "settings": {
-          "background": "#E10001",
+          "background": "#e10001",
           "background_gradient": "",
-          "text": "#F9F9F6",
-          "button": "#F9F9F6",
-          "button_label": "#E10001",
-          "secondary_button_label": "#F9F9F6",
-          "shadow": "#3A0A08"
+          "text": "#f9f9f6",
+          "button": "#f9f9f6",
+          "button_label": "#e10001",
+          "secondary_button_label": "#f9f9f6",
+          "shadow": "#3a0a08"
         }
       },
       "scheme-5": {
