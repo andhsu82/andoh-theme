@@ -1360,11 +1360,10 @@ details[open] .header__word-search {
 
 /* Slim footer bar: same padding, text size and minimum height as the cookie bar */
 .andoh-footer-bar {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   gap: 1.6rem 3.2rem;
-  flex-wrap: wrap;
   min-height: 3.6rem;
   padding-top: 1.4rem;
   padding-bottom: 1.4rem;
@@ -1429,6 +1428,7 @@ details[open] .header__word-search {
 .andoh-footer-bar .list-payment__item {
   padding: 0;
   margin: 0;
+  list-style: none;
 }
 
 .andoh-footer-bar .list-payment__item .icon {
@@ -1441,4 +1441,46 @@ details[open] .header__word-search {
   padding-bottom: 0;
   margin-top: 0;
   border-top: 0;
+}
+
+.andoh-footer-bar__middle {
+  display: flex;
+  justify-content: center;
+}
+
+.andoh-footer-bar__right {
+  justify-content: flex-end;
+}
+
+.andoh-footer-bar .footer__list-social {
+  justify-content: center;
+}
+
+/* Payment icons in one colour, like the social icons: card outline and logo in the text colour */
+.andoh-footer-bar .list-payment__item svg,
+.andoh-footer-bar .list-payment__item svg * {
+  fill: currentColor !important;
+  opacity: 1 !important;
+  stroke: none !important;
+}
+
+.andoh-footer-bar .list-payment__item svg > path:nth-of-type(2) {
+  fill: rgb(var(--color-background)) !important;
+}
+
+.andoh-footer-bar .list-payment__item {
+  color: rgb(var(--color-foreground));
+}
+
+@media screen and (max-width: 749px) {
+  .andoh-footer-bar {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .andoh-footer-bar__left,
+  .andoh-footer-bar__right {
+    justify-content: center;
+  }
 }

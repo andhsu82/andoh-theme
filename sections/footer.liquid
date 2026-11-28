@@ -264,10 +264,12 @@
           {%- endfor -%}
         {%- endif -%}
       </div>
-      <div class="andoh-footer-bar__right">
+      <div class="andoh-footer-bar__middle">
         {%- if section.settings.show_social and has_social_icons -%}
           {%- render 'social-icons', class: 'footer__list-social andoh-footer-bar__social' -%}
         {%- endif -%}
+      </div>
+      <div class="andoh-footer-bar__right">
         {%- if section.settings.payment_enable -%}
           <div class="footer__payment">
             <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
