@@ -1457,14 +1457,14 @@ details[open] .header__word-search {
 }
 
 /* Payment icons in one colour, like the social icons: card outline and logo in the text colour */
-.andoh-footer-bar .list-payment__item svg,
-.andoh-footer-bar .list-payment__item svg * {
+.andoh-footer-bar .list-payment__item svg:not(.andoh-pay-mono),
+.andoh-footer-bar .list-payment__item svg:not(.andoh-pay-mono) * {
   fill: currentColor !important;
   opacity: 1 !important;
   stroke: none !important;
 }
 
-.andoh-footer-bar .list-payment__item svg > path:nth-of-type(2) {
+.andoh-footer-bar .list-payment__item svg:not(.andoh-pay-mono) > path:nth-of-type(2) {
   fill: rgb(var(--color-background)) !important;
 }
 
