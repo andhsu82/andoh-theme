@@ -42,7 +42,8 @@
       assign only_empty_brand = true
     endif
   -%}
-  {%- if section.blocks.size > 0
+  {%- if section.settings.andoh_compact -%}
+  {%- elsif section.blocks.size > 0
     or section.settings.newsletter_enable
     or section.settings.show_social
     and has_social_icons == true
@@ -250,6 +251,38 @@
     {%- endunless -%}
   {%- endif -%}
 
+  {%- if section.settings.andoh_compact -%}
+    {%- comment -%} andoh: one slim bar, the same height as the cookie bar {%- endcomment -%}
+    <div class="andoh-footer-bar page-width">
+      <div class="andoh-footer-bar__left">
+        <small class="copyright__content">&copy; {{ 'now' | date: '%Y' }} {{ shop.name | link_to: routes.root_url }}</small>
+        {%- if section.settings.show_policy -%}
+          {%- for policy in shop.policies -%}
+            {%- if policy != blank -%}
+              <small class="copyright__content"><a href="{{ policy.url }}">{{ policy.title | escape }}</a></small>
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
+      </div>
+      <div class="andoh-footer-bar__right">
+        {%- if section.settings.show_social and has_social_icons -%}
+          {%- render 'social-icons', class: 'footer__list-social andoh-footer-bar__social' -%}
+        {%- endif -%}
+        {%- if section.settings.payment_enable -%}
+          <div class="footer__payment">
+            <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
+            <ul class="list list-payment" role="list">
+              {%- for type in shop.enabled_payment_types -%}
+                <li class="list-payment__item">
+                  {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- else -%}
   <div
     class="footer__content-bottom{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
     {% if settings.animations_reveal_on_scroll %}
@@ -318,6 +351,7 @@
       </div>
     </div>
   </div>
+  {%- endif -%}
 </footer>
 
 {% schema %}
@@ -423,6 +457,13 @@
     }
   ],
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "andoh_compact",
+      "label": "Slim one-line footer",
+      "default": true,
+      "info": "Copyright and policies on the left, social and payment icons on the right, the same height as the cookie bar."
+    },
     {
       "type": "color_scheme",
       "id": "color_scheme",
