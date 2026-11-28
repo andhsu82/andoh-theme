@@ -16,13 +16,6 @@
       <rect x=".5" y=".5" width="37" height="23" rx="2.5" fill="none" stroke="currentColor"/>
       <text x="19" y="15" text-anchor="middle" fill="currentColor" font-family="Verdana, Arial, sans-serif" font-size="8" font-weight="700" font-style="italic" letter-spacing="-.2">PayPal</text>
     </svg>
-  {%- when 'diners_club' -%}
-    <svg class="icon andoh-pay-mono" viewBox="0 0 38 24" width="38" height="24" role="img" aria-labelledby="pi-andoh-diners" xmlns="http://www.w3.org/2000/svg">
-      <title id="pi-andoh-diners">Diners Club</title>
-      <rect x=".5" y=".5" width="37" height="23" rx="2.5" fill="none" stroke="currentColor"/>
-      <text x="19" y="11" text-anchor="middle" fill="currentColor" font-family="Arial, sans-serif" font-size="6.2" font-weight="700" letter-spacing=".2">DINERS</text>
-      <text x="19" y="18" text-anchor="middle" fill="currentColor" font-family="Arial, sans-serif" font-size="6.2" font-weight="700" letter-spacing=".2">CLUB</text>
-    </svg>
   {%- else -%}
     {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
 {%- endcase -%}
