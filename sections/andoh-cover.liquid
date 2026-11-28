@@ -57,7 +57,7 @@
       {%- if section.settings.drawing != blank -%}
         {{ section.settings.drawing | image_url: width: 900 | image_tag: alt: '', loading: 'eager' }}
       {%- else -%}
-        <img src="{{ 'andoh-plum-maroon.png' | asset_url }}" width="600" height="903" alt="" loading="eager">
+        <img src="{{ 'andoh-plum-white.png' | asset_url }}" width="600" height="903" alt="" loading="eager">
       {%- endif -%}
     </div>
   {%- endif -%}
@@ -237,7 +237,7 @@
       "type": "image_picker",
       "id": "drawing",
       "label": "Drawing",
-      "info": "A transparent PNG. Leave empty to use the maroon plum blossom built into the theme."
+      "info": "A transparent PNG. Leave empty to use the white plum blossom built into the theme."
     },
     {
       "type": "range",
@@ -247,7 +247,7 @@
       "max": 80,
       "step": 1,
       "unit": "%",
-      "default": 40
+      "default": 28
     },
     {
       "type": "header",
